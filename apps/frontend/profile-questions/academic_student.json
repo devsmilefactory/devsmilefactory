@@ -1,0 +1,562 @@
+{
+  "profileType": "academic_student",
+  "displayName": "Academic Student",
+  "description": "Students with academic projects and research interests",
+  "sections": [
+    {
+      "title": "Personal Information",
+      "icon": "person",
+      "description": "Tell us about yourself",
+      "questions": [
+        {
+          "id": "full_name",
+          "name": "full_name",
+          "label": "Full Name",
+          "type": "text",
+          "required": true,
+          "hint": "Your full name"
+        },
+        {
+          "id": "bio",
+          "name": "bio",
+          "label": "Executive Summary",
+          "type": "textarea",
+          "fullWidth": true,
+          "hint": "Brief introduction about your academic interests and career goals"
+        },
+        {
+          "id": "languages",
+          "name": "languages",
+          "label": "Languages",
+          "type": "multi-select",
+          "options": [
+            "English",
+            "Shona",
+            "Ndebele",
+            "Afrikaans",
+            "French",
+            "Portuguese",
+            "Swahili",
+            "Arabic",
+            "Chinese",
+            "Spanish",
+            "German",
+            "Other"
+          ],
+          "hint": "Languages you speak"
+        }
+      ]
+    },
+    {
+      "title": "Academic Information",
+      "icon": "school",
+      "description": "Tell us about your academic background",
+      "questions": [
+        {
+          "id": "institution",
+          "name": "institution",
+          "label": "Institution",
+          "type": "text",
+          "required": true,
+          "hint": "What educational institution do you attend?"
+        },
+        {
+          "id": "degree_program",
+          "name": "degree_program",
+          "label": "Degree Program",
+          "type": "select",
+          "required": true,
+          "options": [
+            "Certificate",
+            "Diploma",
+            "Associate Degree",
+            "Bachelor's Degree",
+            "Master's Degree",
+            "Doctorate",
+            "Professional Degree",
+            "Vocational Training",
+            "Other"
+          ],
+          "hint": "What degree program are you enrolled in?"
+        },
+        {
+          "id": "field_of_study",
+          "name": "field_of_study",
+          "label": "Field of Study",
+          "type": "text",
+          "required": true,
+          "hint": "What is your major or field of study?"
+        },
+        {
+          "id": "year_of_study",
+          "name": "year_of_study",
+          "label": "Year of Study",
+          "type": "select",
+          "options": [
+            "First Year",
+            "Second Year",
+            "Third Year",
+            "Fourth Year",
+            "Fifth Year",
+            "Sixth Year+",
+            "Final Year",
+            "Graduated"
+          ],
+          "hint": "What year of study are you in?"
+        },
+        {
+          "id": "expected_graduation",
+          "name": "expected_graduation",
+          "label": "Expected Graduation",
+          "type": "text",
+          "hint": "When do you expect to graduate? (e.g., May 2026)"
+        }
+      ]
+    },
+    {
+      "title": "Research & Projects",
+      "icon": "science",
+      "description": "Tell us about your research interests and projects",
+      "questions": [
+        {
+          "id": "research_interests",
+          "name": "research_interests",
+          "label": "Research Interests",
+          "type": "multi-select",
+          "options": [
+            "Computer Science",
+            "Engineering",
+            "Medicine",
+            "Agriculture",
+            "Environmental Science",
+            "Economics",
+            "Business",
+            "Social Sciences",
+            "Humanities",
+            "Natural Sciences",
+            "Mathematics",
+            "Other"
+          ],
+          "fullWidth": true,
+          "hint": "What are your research interests?"
+        },
+        {
+          "id": "current_projects",
+          "name": "current_projects",
+          "label": "Current Projects",
+          "type": "textarea",
+          "fullWidth": true,
+          "hint": "Describe any current academic or research projects you're working on"
+        },
+        {
+          "id": "past_projects",
+          "name": "past_projects",
+          "label": "Past Projects",
+          "type": "textarea",
+          "fullWidth": true,
+          "hint": "Describe any past academic or research projects you've completed"
+        },
+        {
+          "id": "publications",
+          "name": "publications",
+          "label": "Publications",
+          "type": "textarea",
+          "fullWidth": true,
+          "hint": "List any publications, papers, or presentations you've authored"
+        }
+      ]
+    },
+    {
+      "title": "Skills & Expertise",
+      "icon": "psychology",
+      "description": "Tell us about your skills and expertise",
+      "questions": [
+        {
+          "id": "academic_skills",
+          "name": "academic_skills",
+          "label": "Academic Skills",
+          "type": "multi-select",
+          "options": [
+            "Research Methodology",
+            "Data Analysis",
+            "Scientific Writing",
+            "Literature Review",
+            "Experimental Design",
+            "Statistical Analysis",
+            "Laboratory Techniques",
+            "Field Research",
+            "Critical Thinking",
+            "Problem Solving",
+            "Other"
+          ],
+          "fullWidth": true,
+          "hint": "What academic skills do you have?"
+        },
+        {
+          "id": "technical_skills",
+          "name": "technical_skills",
+          "label": "Technical Skills",
+          "type": "multi-select",
+          "options": [
+            "Programming",
+            "Data Science",
+            "Machine Learning",
+            "Web Development",
+            "Mobile Development",
+            "Database Management",
+            "Cloud Computing",
+            "Cybersecurity",
+            "Networking",
+            "Hardware",
+            "Other"
+          ],
+          "fullWidth": true,
+          "hint": "What technical skills do you have?"
+        },
+        {
+          "id": "software_tools",
+          "name": "software_tools",
+          "label": "Software & Tools",
+          "type": "multi-select-free",
+          "fullWidth": true,
+          "hint": "What software tools or platforms are you proficient in?"
+        },
+        {
+          "id": "certifications",
+          "name": "certifications",
+          "label": "Certifications",
+          "type": "multi-select-free",
+          "fullWidth": true,
+          "hint": "What certifications do you hold?"
+        }
+      ]
+    },
+    {
+      "title": "Extracurricular Activities",
+      "icon": "groups",
+      "description": "Tell us about your extracurricular activities",
+      "questions": [
+        {
+          "id": "student_organizations",
+          "name": "student_organizations",
+          "label": "Student Organizations",
+          "type": "multi-select-free",
+          "fullWidth": true,
+          "hint": "What student organizations are you involved in?"
+        },
+        {
+          "id": "leadership_roles",
+          "name": "leadership_roles",
+          "label": "Leadership Roles",
+          "type": "textarea",
+          "fullWidth": true,
+          "hint": "Describe any leadership roles you hold or have held"
+        },
+        {
+          "id": "volunteer_experience",
+          "name": "volunteer_experience",
+          "label": "Volunteer Experience",
+          "type": "textarea",
+          "fullWidth": true,
+          "hint": "Describe any volunteer experience you have"
+        },
+        {
+          "id": "competitions",
+          "name": "competitions",
+          "label": "Competitions",
+          "type": "textarea",
+          "fullWidth": true,
+          "hint": "List any academic competitions you've participated in"
+        }
+      ]
+    },
+    {
+      "title": "Career Interests",
+      "icon": "work",
+      "description": "Tell us about your career interests",
+      "questions": [
+        {
+          "id": "career_goals",
+          "name": "career_goals",
+          "label": "Career Goals",
+          "type": "textarea",
+          "fullWidth": true,
+          "hint": "What are your career goals after graduation?"
+        },
+        {
+          "id": "industry_interests",
+          "name": "industry_interests",
+          "label": "Industry Interests",
+          "type": "multi-select",
+          "options": [
+            "Technology & Software",
+            "Financial Services",
+            "Healthcare & Life Sciences",
+            "Manufacturing & Industrial",
+            "Retail & Consumer Goods",
+            "Energy & Utilities",
+            "Telecommunications",
+            "Media & Entertainment",
+            "Education",
+            "Agriculture",
+            "Transportation & Logistics",
+            "Real Estate & Construction",
+            "Professional Services",
+            "Nonprofit & Social Enterprise",
+            "Other"
+          ],
+          "fullWidth": true,
+          "hint": "What industries are you interested in?"
+        },
+        {
+          "id": "job_interests",
+          "name": "job_interests",
+          "label": "Job Interests",
+          "type": "multi-select",
+          "options": [
+            "Research",
+            "Development",
+            "Engineering",
+            "Data Analysis",
+            "Consulting",
+            "Management",
+            "Marketing",
+            "Sales",
+            "Finance",
+            "Operations",
+            "Human Resources",
+            "Legal",
+            "Other"
+          ],
+          "fullWidth": true,
+          "hint": "What types of jobs are you interested in?"
+        },
+        {
+          "id": "entrepreneurship_interest",
+          "name": "entrepreneurship_interest",
+          "label": "Entrepreneurship Interest",
+          "type": "boolean",
+          "hint": "Are you interested in entrepreneurship?"
+        },
+        {
+          "id": "startup_idea",
+          "name": "startup_idea",
+          "label": "Startup Idea",
+          "type": "textarea",
+          "fullWidth": true,
+          "condition": {
+            "field": "entrepreneurship_interest",
+            "value": true
+          },
+          "hint": "If interested in entrepreneurship, briefly describe your startup idea"
+        }
+      ]
+    },
+    {
+      "title": "Social Media & Online Presence",
+      "icon": "public",
+      "description": "Share your online presence and social media profiles",
+      "questions": [
+        {
+          "id": "website",
+          "name": "website",
+          "label": "Website",
+          "type": "text",
+          "fullWidth": true,
+          "hint": "Your personal website or portfolio URL"
+        },
+        {
+          "id": "linkedin",
+          "name": "linkedin",
+          "label": "LinkedIn",
+          "type": "text",
+          "hint": "Your LinkedIn profile URL"
+        },
+        {
+          "id": "twitter",
+          "name": "twitter",
+          "label": "Twitter/X",
+          "type": "text",
+          "hint": "Your Twitter/X profile URL"
+        },
+        {
+          "id": "github",
+          "name": "github",
+          "label": "GitHub",
+          "type": "text",
+          "hint": "Your GitHub profile URL"
+        },
+        {
+          "id": "instagram",
+          "name": "instagram",
+          "label": "Instagram",
+          "type": "text",
+          "hint": "Your Instagram profile URL"
+        }
+      ]
+    },
+    {
+      "title": "Contact Information",
+      "icon": "contact_mail",
+      "description": "Share your contact information",
+      "questions": [
+        {
+          "id": "contact_email",
+          "name": "contact_email",
+          "label": "Contact Email",
+          "type": "text",
+          "required": true,
+          "hint": "Your preferred email for contacts"
+        },
+        {
+          "id": "contact_phone",
+          "name": "contact_phone",
+          "label": "Contact Phone",
+          "type": "text",
+          "hint": "Your phone number with country code"
+        },
+        {
+          "id": "whatsapp",
+          "name": "whatsapp",
+          "label": "WhatsApp",
+          "type": "text",
+          "hint": "Your WhatsApp number (if different from phone)"
+        },
+        {
+          "id": "preferred_contact_method",
+          "name": "preferred_contact_method",
+          "label": "Preferred Contact Method",
+          "type": "select",
+          "options": [
+            "Email",
+            "Phone",
+            "WhatsApp",
+            "LinkedIn",
+            "Other"
+          ],
+          "hint": "How would you prefer to be contacted?"
+        }
+      ]
+    },
+    {
+      "title": "Location",
+      "icon": "location_on",
+      "description": "Share your location information",
+      "questions": [
+        {
+          "id": "city",
+          "name": "city",
+          "label": "City",
+          "type": "text",
+          "required": true,
+          "hint": "City where you are located"
+        },
+        {
+          "id": "country",
+          "name": "country",
+          "label": "Country",
+          "type": "select",
+          "required": true,
+          "options": [
+            "Zimbabwe",
+            "South Africa",
+            "Botswana",
+            "Zambia",
+            "Mozambique",
+            "Namibia",
+            "Kenya",
+            "Nigeria",
+            "Ghana",
+            "Rwanda",
+            "Uganda",
+            "Tanzania",
+            "Ethiopia",
+            "United States",
+            "United Kingdom",
+            "Other"
+          ],
+          "hint": "Country where you are located"
+        },
+        {
+          "id": "willing_to_relocate",
+          "name": "willing_to_relocate",
+          "label": "Willing to Relocate",
+          "type": "boolean",
+          "hint": "Are you willing to relocate for opportunities?"
+        },
+        {
+          "id": "preferred_locations",
+          "name": "preferred_locations",
+          "label": "Preferred Locations",
+          "type": "multi-select",
+          "options": [
+            "Zimbabwe - Major Cities",
+            "Zimbabwe - Rural Areas",
+            "Southern Africa",
+            "East Africa",
+            "West Africa",
+            "North Africa",
+            "Central Africa",
+            "Pan-African",
+            "Europe",
+            "North America",
+            "Asia",
+            "Global",
+            "Remote Only"
+          ],
+          "fullWidth": true,
+          "condition": {
+            "field": "willing_to_relocate",
+            "value": true
+          },
+          "hint": "If willing to relocate, which regions would you prefer?"
+        }
+      ]
+    },
+    {
+      "title": "Goals & Interests",
+      "icon": "flag",
+      "description": "Share your goals and interests for better matchmaking",
+      "questions": [
+        {
+          "id": "academic_goals",
+          "name": "academic_goals",
+          "label": "Academic Goals",
+          "type": "multi-select",
+          "options": [
+            "Complete Current Degree",
+            "Pursue Advanced Degree",
+            "Publish Research",
+            "Present at Conferences",
+            "Win Academic Awards",
+            "Secure Research Funding",
+            "Join Research Team",
+            "Lead Research Project",
+            "Other"
+          ],
+          "fullWidth": true,
+          "hint": "What are your academic goals?"
+        },
+        {
+          "id": "looking_for",
+          "name": "looking_for",
+          "label": "Currently Looking For",
+          "type": "multi-select",
+          "options": [
+            "Internship Opportunities",
+            "Research Opportunities",
+            "Mentorship",
+            "Networking",
+            "Funding",
+            "Collaboration Partners",
+            "Job Opportunities",
+            "Entrepreneurship Support",
+            "Other"
+          ],
+          "fullWidth": true,
+          "hint": "What are you currently looking for?"
+        }
+      ]
+    }
+  ]
+}

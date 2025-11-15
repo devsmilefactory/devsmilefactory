@@ -1,0 +1,170 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Light Mode (Default) */
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 142 88% 29%; /* Dark green from logo rgb(9,141,69) */
+    --primary-foreground: 0 0% 100%;
+
+    --primary-glow: 81 64% 43%; /* Light green from logo rgb(129,181,39) */
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    --success-dark: 142 76% 26%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 45 95% 52%;
+
+    --radius: 0.75rem;
+
+    /* Sidebar colors - Light */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 222.2 84% 4.9%;
+    --sidebar-primary: 45 95% 52%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 40% 96.1%;
+    --sidebar-accent-foreground: 222.2 47.4% 11.2%;
+    --sidebar-border: 214.3 31.8% 91.4%;
+    --sidebar-ring: 45 95% 52%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(45 95% 52%), hsl(38 90% 65%));
+    --gradient-accent: linear-gradient(135deg, hsl(42 85% 45%), hsl(142 76% 36%));
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(210 40% 98%));
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px hsla(222, 47%, 11%, 0.08);
+    --shadow-md: 0 4px 16px hsla(222, 47%, 11%, 0.12);
+    --shadow-lg: 0 8px 32px hsla(222, 47%, 11%, 0.16);
+    --shadow-elegant: 0 10px 30px -10px hsla(222, 47%, 11%, 0.2);
+    --shadow-glow: 0 0 40px hsla(45, 95%, 52%, 0.15);
+
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 235 25% 10%;
+    --foreground: 0 0% 98%;
+
+    --card: 235 20% 12%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 235 20% 12%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 142 88% 29%; /* Dark green from logo */
+    --primary-foreground: 235 25% 10%;
+
+    --primary-glow: 81 64% 43%; /* Light green from logo */
+
+    --secondary: 42 85% 45%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 235 15% 20%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 45 95% 52%;
+    --accent-foreground: 235 25% 10%;
+
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    --success-dark: 142 76% 26%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 235 25% 10%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 235 15% 20%;
+    --input: 235 15% 20%;
+    --ring: 45 95% 52%;
+
+    --sidebar-background: 235 20% 12%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 45 95% 52%;
+    --sidebar-primary-foreground: 235 25% 10%;
+    --sidebar-accent: 235 15% 20%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 235 15% 20%;
+    --sidebar-ring: 45 95% 52%;
+
+    --shadow-sm: 0 2px 8px hsla(45, 95%, 52%, 0.15);
+    --shadow-md: 0 4px 16px hsla(45, 95%, 52%, 0.2);
+    --shadow-lg: 0 8px 32px hsla(45, 95%, 52%, 0.25);
+    --shadow-elegant: 0 10px 30px -10px hsla(45, 95%, 52%, 0.3);
+    --shadow-glow: 0 0 40px hsla(45, 95%, 52%, 0.2);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.5s ease-out forwards;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+}

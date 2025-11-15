@@ -1,0 +1,8 @@
+FROM 10.132.228.90:8085/registry/java-base:17
+
+RUN mkdir /uat
+COPY . /uat
+WORKDIR /uat
+RUN mvn clean -P develop package #-s /root/.m2/settings-docker.xml
+
+CMD java -Duser.timezone=CAT -jar -Dspring.profiles.active=lab /uat/target/transactions-manager-0.0.1-SNAPSHOT.jar

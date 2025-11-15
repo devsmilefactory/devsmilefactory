@@ -1,0 +1,56 @@
+{
+  "name": "smilefactory-monorepo",
+  "version": "1.0.0",
+  "description": "SmileFactory monorepo containing frontend, backend services, and shared libraries",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "shared/*",
+    "tools/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,yml,yaml}\"",
+    "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx,json,md,yml,yaml}\"",
+    "deploy:frontend": "bash deployment/scripts/deploy-frontend.sh",
+    "deploy:backend": "bash deployment/scripts/deploy-backend.sh",
+    "deploy:all": "bash deployment/scripts/deploy-all.sh",
+    "health-check": "bash deployment/scripts/health-check.sh",
+    "docker:build": "npm run docker:build:frontend && npm run docker:build:backend-node && npm run docker:build:backend-java",
+    "docker:build:frontend": "docker build -f deployment/Dockerfile.frontend -t smilefactory-frontend:latest apps/frontend",
+    "docker:build:backend-node": "docker build -f deployment/Dockerfile.backend-node -t smilefactory-backend-node:latest apps/backend-node",
+    "docker:build:backend-java": "docker build -f deployment/Dockerfile.backend-java -t smilefactory-backend-java:latest apps/backend-java"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.8.1",
+    "@commitlint/config-conventional": "^17.8.1",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-react": "^7.34.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.5"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/devsmilefactory/devsmilefactory.git"
+  },
+  "keywords": [
+    "monorepo",
+    "react",
+    "nodejs",
+    "java",
+    "docker"
+  ],
+  "author": "SmileFactory Team",
+  "license": "UNLICENSED"
+}

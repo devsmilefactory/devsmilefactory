@@ -1,0 +1,54 @@
+version: '3.8'
+
+services:
+  backend-node:
+    build:
+      context: ../../../apps/backend-node
+      dockerfile: ../../../deployment/Dockerfile.backend-node
+    container_name: smilefactory-backend-node
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - DATABASE_URL=${DATABASE_URL}
+      - JWT_SECRET=${JWT_SECRET}
+      - API_KEY=${API_KEY}
+    networks:
+      - smilefactory-network
+    volumes:
+      - /smilefactory/backend-node/logs:/smilefactory/backend-node/logs
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    restart: unless-stopped
+
+  backend-java:
+    build:
+      context: ../../../apps/backend-java
+      dockerfile: ../../../deployment/Dockerfile.backend-java
+    container_name: smilefactory-backend-java
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_PROFILES_ACTIVE=production
+      - DATABASE_URL=${DATABASE_URL}
+      - JWT_SECRET=${JWT_SECRET}
+    networks:
+      - smilefactory-network
+    volumes:
+      - /smilefactory/backend-java/logs:/smilefactory/backend-java/logs
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:8080/actuator/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    restart: unless-stopped
+
+networks:
+  smilefactory-network:
+    driver: bridge
+    name: smilefactory-network

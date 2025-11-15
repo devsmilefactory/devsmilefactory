@@ -1,0 +1,511 @@
+{
+  "profileType": "industry_expert",
+  "displayName": "Industry Expert",
+  "description": "Subject matter experts with specialized knowledge",
+  "sections": [
+    {
+      "title": "Executive Summary",
+      "icon": "person",
+      "description": "Share a brief introduction about your expertise",
+      "questions": [
+        {
+          "id": "bio",
+          "name": "bio",
+          "label": "Executive Summary",
+          "type": "textarea",
+          "required": true,
+          "fullWidth": true,
+          "hint": "Tell us briefly about your industry expertise and specialization (max 500 characters)"
+        }
+      ]
+    },
+    {
+      "title": "Professional Information",
+      "icon": "work",
+      "description": "Tell us about your professional background",
+      "questions": [
+        {
+          "id": "industry",
+          "name": "industry",
+          "label": "Industry",
+          "type": "select",
+          "required": true,
+          "options": [
+            "Technology & Software",
+            "Financial Services",
+            "Healthcare & Life Sciences",
+            "Manufacturing & Industrial",
+            "Retail & Consumer Goods",
+            "Energy & Utilities",
+            "Telecommunications",
+            "Media & Entertainment",
+            "Education",
+            "Agriculture",
+            "Transportation & Logistics",
+            "Real Estate & Construction",
+            "Professional Services",
+            "Nonprofit & Social Enterprise",
+            "Other"
+          ],
+          "hint": "Your primary industry"
+        },
+        {
+          "id": "job_title",
+          "name": "job_title",
+          "label": "Job Title",
+          "type": "text",
+          "required": true,
+          "hint": "Your current job title"
+        },
+        {
+          "id": "company",
+          "name": "company",
+          "label": "Company/Organization",
+          "type": "text",
+          "required": true,
+          "hint": "Where you currently work"
+        },
+        {
+          "id": "years_of_experience",
+          "name": "years_of_experience",
+          "label": "Years of Experience",
+          "type": "select",
+          "options": [
+            "Less than 1 year",
+            "1-2 years",
+            "3-5 years",
+            "6-10 years",
+            "11-15 years",
+            "16-20 years",
+            "More than 20 years"
+          ],
+          "hint": "How many years of experience do you have in your industry?"
+        }
+      ]
+    },
+    {
+      "title": "Expertise & Specialization",
+      "icon": "psychology",
+      "description": "Tell us about your specific expertise",
+      "questions": [
+        {
+          "id": "expertise_areas",
+          "name": "expertise_areas",
+          "label": "Areas of Expertise",
+          "type": "multi-select",
+          "required": true,
+          "options": [
+            "Technical Expertise",
+            "Market Analysis",
+            "Regulatory Compliance",
+            "Industry Trends",
+            "Competitive Intelligence",
+            "Product Development",
+            "Process Optimization",
+            "Quality Assurance",
+            "Risk Management",
+            "Strategic Planning",
+            "Innovation",
+            "Research & Development",
+            "Other"
+          ],
+          "fullWidth": true,
+          "hint": "What are your specific areas of expertise?"
+        },
+        {
+          "id": "specialization",
+          "name": "specialization",
+          "label": "Specialization",
+          "type": "text",
+          "required": true,
+          "hint": "What is your specific specialization within your industry?"
+        },
+        {
+          "id": "certifications",
+          "name": "certifications",
+          "label": "Certifications",
+          "type": "multi-select-free",
+          "fullWidth": true,
+          "hint": "What industry certifications do you hold?"
+        },
+        {
+          "id": "publications",
+          "name": "publications",
+          "label": "Publications",
+          "type": "textarea",
+          "fullWidth": true,
+          "hint": "List any relevant publications, papers, or articles you've authored"
+        }
+      ]
+    },
+    {
+      "title": "Industry Contributions",
+      "icon": "emoji_events",
+      "description": "Tell us about your contributions to your industry",
+      "questions": [
+        {
+          "id": "key_achievements",
+          "name": "key_achievements",
+          "label": "Key Achievements",
+          "type": "textarea",
+          "fullWidth": true,
+          "hint": "What are your key achievements in your industry?"
+        },
+        {
+          "id": "speaking_engagements",
+          "name": "speaking_engagements",
+          "label": "Speaking Engagements",
+          "type": "textarea",
+          "fullWidth": true,
+          "hint": "List any relevant speaking engagements or presentations"
+        },
+        {
+          "id": "industry_recognition",
+          "name": "industry_recognition",
+          "label": "Industry Recognition",
+          "type": "textarea",
+          "fullWidth": true,
+          "hint": "List any awards, honors, or recognition you've received"
+        },
+        {
+          "id": "industry_associations",
+          "name": "industry_associations",
+          "label": "Industry Associations",
+          "type": "multi-select-free",
+          "fullWidth": true,
+          "hint": "What industry associations or professional organizations are you a member of?"
+        }
+      ]
+    },
+    {
+      "title": "Advisory Services",
+      "icon": "support_agent",
+      "description": "Tell us about the advisory services you offer",
+      "questions": [
+        {
+          "id": "advisory_services",
+          "name": "advisory_services",
+          "label": "Advisory Services",
+          "type": "multi-select",
+          "options": [
+            "Technical Consulting",
+            "Strategic Advisory",
+            "Market Analysis",
+            "Due Diligence",
+            "Regulatory Guidance",
+            "Innovation Consulting",
+            "Process Improvement",
+            "Quality Assurance",
+            "Risk Assessment",
+            "Expert Testimony",
+            "Training & Workshops",
+            "Other"
+          ],
+          "fullWidth": true,
+          "hint": "What advisory services do you offer?"
+        },
+        {
+          "id": "service_description",
+          "name": "service_description",
+          "label": "Service Description",
+          "type": "textarea",
+          "fullWidth": true,
+          "hint": "Describe your advisory services in more detail"
+        },
+        {
+          "id": "target_clients",
+          "name": "target_clients",
+          "label": "Target Clients",
+          "type": "multi-select",
+          "options": [
+            "Startups",
+            "Small Businesses",
+            "Medium Businesses",
+            "Large Corporations",
+            "Nonprofits",
+            "Government",
+            "Educational Institutions",
+            "Investors",
+            "Other"
+          ],
+          "fullWidth": true,
+          "hint": "Who are your target clients?"
+        },
+        {
+          "id": "availability",
+          "name": "availability",
+          "label": "Availability",
+          "type": "select",
+          "options": [
+            "Full-time",
+            "Part-time",
+            "Contract",
+            "Project-based",
+            "Limited availability",
+            "Weekends only",
+            "Evenings only",
+            "Flexible hours",
+            "By appointment",
+            "Other"
+          ],
+          "hint": "What is your availability for providing advisory services?"
+        }
+      ]
+    },
+    {
+      "title": "Education & Training",
+      "icon": "school",
+      "description": "Tell us about your education and training",
+      "questions": [
+        {
+          "id": "education_level",
+          "name": "education_level",
+          "label": "Highest Education Level",
+          "type": "select",
+          "options": [
+            "High School",
+            "Certificate",
+            "Diploma",
+            "Associate Degree",
+            "Bachelor's Degree",
+            "Master's Degree",
+            "Doctorate",
+            "Professional Degree",
+            "Vocational Training",
+            "Self-taught",
+            "Other"
+          ],
+          "hint": "What is your highest level of education?"
+        },
+        {
+          "id": "field_of_study",
+          "name": "field_of_study",
+          "label": "Field of Study",
+          "type": "text",
+          "hint": "What was your field of study?"
+        },
+        {
+          "id": "institution",
+          "name": "institution",
+          "label": "Institution",
+          "type": "text",
+          "hint": "Where did you study?"
+        },
+        {
+          "id": "continuing_education",
+          "name": "continuing_education",
+          "label": "Continuing Education",
+          "type": "textarea",
+          "fullWidth": true,
+          "hint": "What continuing education or professional development have you pursued?"
+        }
+      ]
+    },
+    {
+      "title": "Social Media & Online Presence",
+      "icon": "public",
+      "description": "Share your online presence and social media profiles",
+      "questions": [
+        {
+          "id": "website",
+          "name": "website",
+          "label": "Website",
+          "type": "text",
+          "fullWidth": true,
+          "hint": "Your personal or professional website URL"
+        },
+        {
+          "id": "linkedin",
+          "name": "linkedin",
+          "label": "LinkedIn",
+          "type": "text",
+          "hint": "Your LinkedIn profile URL"
+        },
+        {
+          "id": "twitter",
+          "name": "twitter",
+          "label": "Twitter/X",
+          "type": "text",
+          "hint": "Your Twitter/X profile URL"
+        },
+        {
+          "id": "facebook",
+          "name": "facebook",
+          "label": "Facebook",
+          "type": "text",
+          "hint": "Your Facebook profile or page URL"
+        },
+        {
+          "id": "instagram",
+          "name": "instagram",
+          "label": "Instagram",
+          "type": "text",
+          "hint": "Your Instagram profile URL"
+        }
+      ]
+    },
+    {
+      "title": "Contact Information",
+      "icon": "contact_mail",
+      "description": "Share your contact information",
+      "questions": [
+        {
+          "id": "contact_email",
+          "name": "contact_email",
+          "label": "Contact Email",
+          "type": "text",
+          "required": true,
+          "hint": "Your preferred email for contacts"
+        },
+        {
+          "id": "contact_phone",
+          "name": "contact_phone",
+          "label": "Contact Phone",
+          "type": "text",
+          "hint": "Your phone number with country code"
+        },
+        {
+          "id": "whatsapp",
+          "name": "whatsapp",
+          "label": "WhatsApp",
+          "type": "text",
+          "hint": "Your WhatsApp number (if different from phone)"
+        },
+        {
+          "id": "preferred_contact_method",
+          "name": "preferred_contact_method",
+          "label": "Preferred Contact Method",
+          "type": "select",
+          "options": [
+            "Email",
+            "Phone",
+            "WhatsApp",
+            "LinkedIn",
+            "Other"
+          ],
+          "hint": "How would you prefer to be contacted?"
+        }
+      ]
+    },
+    {
+      "title": "Location",
+      "icon": "location_on",
+      "description": "Share your location information",
+      "questions": [
+        {
+          "id": "city",
+          "name": "city",
+          "label": "City",
+          "type": "text",
+          "required": true,
+          "hint": "City where you are located"
+        },
+        {
+          "id": "country",
+          "name": "country",
+          "label": "Country",
+          "type": "select",
+          "required": true,
+          "options": [
+            "Zimbabwe",
+            "South Africa",
+            "Botswana",
+            "Zambia",
+            "Mozambique",
+            "Namibia",
+            "Kenya",
+            "Nigeria",
+            "Ghana",
+            "Rwanda",
+            "Uganda",
+            "Tanzania",
+            "Ethiopia",
+            "United States",
+            "United Kingdom",
+            "Other"
+          ],
+          "hint": "Country where you are located"
+        },
+        {
+          "id": "willing_to_relocate",
+          "name": "willing_to_relocate",
+          "label": "Remote Advisory",
+          "type": "boolean",
+          "hint": "Are you willing to provide advisory services remotely?"
+        },
+        {
+          "id": "preferred_locations",
+          "name": "preferred_locations",
+          "label": "Preferred Advisory Locations",
+          "type": "multi-select",
+          "options": [
+            "Zimbabwe - Major Cities",
+            "Zimbabwe - Rural Areas",
+            "Southern Africa",
+            "East Africa",
+            "West Africa",
+            "North Africa",
+            "Central Africa",
+            "Pan-African",
+            "Europe",
+            "North America",
+            "Asia",
+            "Global",
+            "Remote Only"
+          ],
+          "fullWidth": true,
+          "condition": {
+            "field": "willing_to_relocate",
+            "value": true
+          },
+          "hint": "If willing to provide remote advisory, which regions would you prefer?"
+        }
+      ]
+    },
+    {
+      "title": "Goals & Interests",
+      "icon": "flag",
+      "description": "Share your goals and interests for better matchmaking",
+      "questions": [
+        {
+          "id": "expert_goals",
+          "name": "expert_goals",
+          "label": "Expert Goals",
+          "type": "multi-select",
+          "options": [
+            "Share Industry Knowledge",
+            "Consulting Opportunities",
+            "Speaking Engagements",
+            "Advisory Roles",
+            "Board Positions",
+            "Mentoring",
+            "Industry Influence",
+            "Networking",
+            "Research Collaboration",
+            "Other"
+          ],
+          "fullWidth": true,
+          "hint": "What are your goals as an industry expert?"
+        },
+        {
+          "id": "looking_for",
+          "name": "looking_for",
+          "label": "Currently Looking For",
+          "type": "multi-select",
+          "options": [
+            "Advisory Opportunities",
+            "Consulting Projects",
+            "Speaking Engagements",
+            "Board Positions",
+            "Mentees",
+            "Research Collaboration",
+            "Networking Events",
+            "Other"
+          ],
+          "fullWidth": true,
+          "hint": "What are you currently looking for?"
+        }
+      ]
+    }
+  ]
+}

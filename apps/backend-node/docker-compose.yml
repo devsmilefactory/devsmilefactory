@@ -1,0 +1,86 @@
+version: '3.8'
+
+services:
+  # Redis for caching and sessions
+  redis:
+    image: redis:7-alpine
+    container_name: smilefactory-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+
+  # API Gateway
+  api-gateway:
+    build:
+      context: ./services/api-gateway
+      dockerfile: ../../infrastructure/docker/Dockerfile
+    container_name: smilefactory-api-gateway
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=development
+      - API_GATEWAY_PORT=3000
+    volumes:
+      - ./services/api-gateway:/app
+      - /app/node_modules
+    depends_on:
+      - redis
+    command: npm run start:dev
+
+  # Auth Service
+  auth-service:
+    build:
+      context: ./services/auth-service
+      dockerfile: ../../infrastructure/docker/Dockerfile
+    container_name: smilefactory-auth-service
+    ports:
+      - "3001:3001"
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=development
+      - AUTH_SERVICE_PORT=3001
+    volumes:
+      - ./services/auth-service:/app
+      - /app/node_modules
+    depends_on:
+      - redis
+    command: npm run start:dev
+
+  # User Service
+  user-service:
+    build:
+      context: ./services/user-service
+      dockerfile: ../../infrastructure/docker/Dockerfile
+    container_name: smilefactory-user-service
+    ports:
+      - "3002:3002"
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=development
+      - USER_SERVICE_PORT=3002
+    volumes:
+      - ./services/user-service:/app
+      - /app/node_modules
+    depends_on:
+      - redis
+    command: npm run start:dev
+
+volumes:
+  redis_data:
+    driver: local
+
+networks:
+  default:
+    name: smilefactory-network
+

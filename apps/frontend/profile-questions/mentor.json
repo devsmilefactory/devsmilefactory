@@ -1,0 +1,487 @@
+{
+  "profileType": "mentor",
+  "displayName": "Mentor",
+  "description": "Experienced professionals offering guidance and mentorship",
+  "sections": [
+    {
+      "title": "Executive Summary",
+      "icon": "person",
+      "description": "Share a brief introduction about your mentorship approach",
+      "questions": [
+        {
+          "id": "bio",
+          "name": "bio",
+          "label": "Executive Summary",
+          "type": "textarea",
+          "required": true,
+          "fullWidth": true,
+          "hint": "Tell us briefly about your expertise and mentorship approach (max 500 characters)"
+        }
+      ]
+    },
+    {
+      "title": "Expertise & Experience",
+      "icon": "school",
+      "description": "Tell us about your expertise and experience",
+      "questions": [
+        {
+          "id": "expertise_areas",
+          "name": "expertise_areas",
+          "label": "Areas of Expertise",
+          "type": "multi-select",
+          "required": true,
+          "options": [
+            "Business Strategy",
+            "Product Development",
+            "Marketing & Sales",
+            "Finance & Fundraising",
+            "Technology & Engineering",
+            "Operations & Scaling",
+            "Leadership & Team Building",
+            "Industry-Specific Knowledge",
+            "Legal & Regulatory",
+            "International Expansion",
+            "Other"
+          ],
+          "fullWidth": true,
+          "hint": "What areas do you have expertise in?"
+        },
+        {
+          "id": "years_of_experience",
+          "name": "years_of_experience",
+          "label": "Years of Experience",
+          "type": "number",
+          "required": true,
+          "hint": "How many years of experience do you have?"
+        },
+        {
+          "id": "industry_experience",
+          "name": "industry_experience",
+          "label": "Industry Experience",
+          "type": "multi-select",
+          "options": [
+            "Technology & Software",
+            "Financial Services",
+            "Healthcare & Life Sciences",
+            "Manufacturing & Industrial",
+            "Retail & Consumer Goods",
+            "Energy & Utilities",
+            "Telecommunications",
+            "Media & Entertainment",
+            "Education",
+            "Agriculture",
+            "Transportation & Logistics",
+            "Real Estate & Construction",
+            "Professional Services",
+            "Nonprofit & Social Enterprise",
+            "Other"
+          ],
+          "fullWidth": true,
+          "hint": "Which industries have you worked in?"
+        },
+        {
+          "id": "career_highlights",
+          "name": "career_highlights",
+          "label": "Career Highlights",
+          "type": "textarea",
+          "fullWidth": true,
+          "hint": "Share some highlights from your career"
+        }
+      ]
+    },
+    {
+      "title": "Mentorship Details",
+      "icon": "people",
+      "description": "Tell us about your mentorship approach",
+      "questions": [
+        {
+          "id": "mentorship_style",
+          "name": "mentorship_style",
+          "label": "Mentorship Style",
+          "type": "select",
+          "required": true,
+          "options": [
+            "One-on-One",
+            "Group Sessions",
+            "Workshop Based",
+            "Project Based",
+            "Advisory Board",
+            "Flexible",
+            "Hands-on",
+            "Advisory",
+            "Coaching",
+            "Networking",
+            "Challenging",
+            "Supportive"
+          ],
+          "hint": "What is your preferred mentorship style?"
+        },
+        {
+          "id": "availability",
+          "name": "availability",
+          "label": "Availability",
+          "type": "select",
+          "required": true,
+          "options": [
+            "Weekly",
+            "Bi-weekly",
+            "Monthly",
+            "On-demand",
+            "Limited",
+            "Full-time",
+            "Part-time",
+            "Weekends only",
+            "Evenings only",
+            "Flexible hours",
+            "By appointment",
+            "Regular scheduled sessions"
+          ],
+          "hint": "How often are you available for mentorship?"
+        },
+        {
+          "id": "previous_mentees",
+          "name": "previous_mentees",
+          "label": "Previous Mentees",
+          "type": "number",
+          "hint": "How many people have you mentored?"
+        },
+        {
+          "id": "mentoring_experience",
+          "name": "mentoring_experience",
+          "label": "Mentorship Highlights",
+          "type": "textarea",
+          "fullWidth": true,
+          "hint": "Share highlights from your mentorship experience"
+        },
+        {
+          "id": "mentee_achievements",
+          "name": "mentee_achievements",
+          "label": "Mentee Achievements",
+          "type": "textarea",
+          "fullWidth": true,
+          "hint": "What achievements have your mentees accomplished?"
+        }
+      ]
+    },
+    {
+      "title": "Professional Background",
+      "icon": "work",
+      "description": "Tell us about your professional background",
+      "questions": [
+        {
+          "id": "mentor_current_role",
+          "name": "mentor_current_role",
+          "label": "Current Role",
+          "type": "text",
+          "hint": "What is your current professional role?"
+        },
+        {
+          "id": "company",
+          "name": "company",
+          "label": "Company",
+          "type": "text",
+          "hint": "What company do you work for?"
+        },
+        {
+          "id": "education",
+          "name": "education",
+          "label": "Education",
+          "type": "multi-select",
+          "options": [
+            "High School",
+            "Certificate",
+            "Diploma",
+            "Associate Degree",
+            "Bachelor's Degree",
+            "Master's Degree",
+            "Doctorate",
+            "Professional Degree",
+            "Vocational Training",
+            "Self-taught",
+            "Other"
+          ],
+          "fullWidth": true,
+          "hint": "Select your educational qualifications"
+        }
+      ]
+    },
+    {
+      "title": "Mentee Preferences",
+      "icon": "person_search",
+      "description": "Tell us about your preferred mentees",
+      "questions": [
+        {
+          "id": "preferred_mentee_stage",
+          "name": "preferred_mentee_stage",
+          "label": "Preferred Mentee Stage",
+          "type": "multi-select",
+          "options": [
+            "Idea Stage",
+            "Early Startup",
+            "Growth Stage",
+            "Established Business",
+            "Students",
+            "Early Career Professionals",
+            "Mid-Career Professionals",
+            "Executives",
+            "Any Stage"
+          ],
+          "fullWidth": true,
+          "hint": "What stage of mentees do you prefer to work with?"
+        },
+        {
+          "id": "preferred_mentee_industry",
+          "name": "preferred_mentee_industry",
+          "label": "Preferred Mentee Industry",
+          "type": "multi-select",
+          "options": [
+            "Technology & Software",
+            "Financial Services",
+            "Healthcare & Life Sciences",
+            "Manufacturing & Industrial",
+            "Retail & Consumer Goods",
+            "Energy & Utilities",
+            "Telecommunications",
+            "Media & Entertainment",
+            "Education",
+            "Agriculture",
+            "Transportation & Logistics",
+            "Real Estate & Construction",
+            "Professional Services",
+            "Nonprofit & Social Enterprise",
+            "Any Industry"
+          ],
+          "fullWidth": true,
+          "hint": "What industries do you prefer to mentor in?"
+        },
+        {
+          "id": "mentorship_topics",
+          "name": "mentorship_topics",
+          "label": "Mentorship Topics",
+          "type": "multi-select",
+          "options": [
+            "Business Strategy",
+            "Product Development",
+            "Marketing & Sales",
+            "Finance & Fundraising",
+            "Technology & Engineering",
+            "Operations & Scaling",
+            "Leadership & Team Building",
+            "Industry-Specific Knowledge",
+            "Legal & Regulatory",
+            "International Expansion",
+            "Personal Development",
+            "Career Guidance",
+            "Other"
+          ],
+          "fullWidth": true,
+          "hint": "What topics do you prefer to mentor on?"
+        }
+      ]
+    },
+    {
+      "title": "Social Media & Online Presence",
+      "icon": "public",
+      "description": "Share your online presence and social media profiles",
+      "questions": [
+        {
+          "id": "website",
+          "name": "website",
+          "label": "Website",
+          "type": "text",
+          "fullWidth": true,
+          "hint": "Your personal or professional website URL"
+        },
+        {
+          "id": "linkedin",
+          "name": "linkedin",
+          "label": "LinkedIn",
+          "type": "text",
+          "hint": "Your LinkedIn profile URL"
+        },
+        {
+          "id": "twitter",
+          "name": "twitter",
+          "label": "Twitter/X",
+          "type": "text",
+          "hint": "Your Twitter/X profile URL"
+        },
+        {
+          "id": "facebook",
+          "name": "facebook",
+          "label": "Facebook",
+          "type": "text",
+          "hint": "Your Facebook profile or page URL"
+        },
+        {
+          "id": "instagram",
+          "name": "instagram",
+          "label": "Instagram",
+          "type": "text",
+          "hint": "Your Instagram profile URL"
+        }
+      ]
+    },
+    {
+      "title": "Contact Information",
+      "icon": "contact_mail",
+      "description": "Share your contact information",
+      "questions": [
+        {
+          "id": "contact_email",
+          "name": "contact_email",
+          "label": "Contact Email",
+          "type": "text",
+          "required": true,
+          "hint": "Your preferred email for contacts"
+        },
+        {
+          "id": "contact_phone",
+          "name": "contact_phone",
+          "label": "Contact Phone",
+          "type": "text",
+          "hint": "Your phone number with country code"
+        },
+        {
+          "id": "whatsapp",
+          "name": "whatsapp",
+          "label": "WhatsApp",
+          "type": "text",
+          "hint": "Your WhatsApp number (if different from phone)"
+        },
+        {
+          "id": "preferred_contact_method",
+          "name": "preferred_contact_method",
+          "label": "Preferred Contact Method",
+          "type": "select",
+          "options": [
+            "Email",
+            "Phone",
+            "WhatsApp",
+            "LinkedIn",
+            "Other"
+          ],
+          "hint": "How would you prefer to be contacted?"
+        }
+      ]
+    },
+    {
+      "title": "Location",
+      "icon": "location_on",
+      "description": "Share your location information",
+      "questions": [
+        {
+          "id": "city",
+          "name": "city",
+          "label": "City",
+          "type": "text",
+          "required": true,
+          "hint": "City where you are located"
+        },
+        {
+          "id": "country",
+          "name": "country",
+          "label": "Country",
+          "type": "select",
+          "required": true,
+          "options": [
+            "Zimbabwe",
+            "South Africa",
+            "Botswana",
+            "Zambia",
+            "Mozambique",
+            "Namibia",
+            "Kenya",
+            "Nigeria",
+            "Ghana",
+            "Rwanda",
+            "Uganda",
+            "Tanzania",
+            "Ethiopia",
+            "United States",
+            "United Kingdom",
+            "Other"
+          ],
+          "hint": "Country where you are located"
+        },
+        {
+          "id": "willing_to_relocate",
+          "name": "willing_to_relocate",
+          "label": "Remote Mentoring",
+          "type": "boolean",
+          "hint": "Are you willing to mentor remotely?"
+        },
+        {
+          "id": "preferred_locations",
+          "name": "preferred_locations",
+          "label": "Preferred Mentoring Locations",
+          "type": "multi-select",
+          "options": [
+            "Zimbabwe - Major Cities",
+            "Zimbabwe - Rural Areas",
+            "Southern Africa",
+            "East Africa",
+            "West Africa",
+            "North Africa",
+            "Central Africa",
+            "Pan-African",
+            "Europe",
+            "North America",
+            "Asia",
+            "Global",
+            "Remote Only"
+          ],
+          "fullWidth": true,
+          "condition": {
+            "field": "willing_to_relocate",
+            "value": true
+          },
+          "hint": "If willing to mentor remotely, which regions would you prefer?"
+        }
+      ]
+    },
+    {
+      "title": "Goals & Interests",
+      "icon": "flag",
+      "description": "Share your goals and interests for better matchmaking",
+      "questions": [
+        {
+          "id": "mentorship_goals",
+          "name": "mentorship_goals",
+          "label": "Mentorship Goals",
+          "type": "multi-select",
+          "options": [
+            "Share Knowledge",
+            "Give Back to Community",
+            "Support Innovation",
+            "Develop Leadership Skills",
+            "Network Building",
+            "Stay Current in Industry",
+            "Potential Investment Opportunities",
+            "Personal Growth",
+            "Other"
+          ],
+          "fullWidth": true,
+          "hint": "What are your goals as a mentor?"
+        },
+        {
+          "id": "looking_for",
+          "name": "looking_for",
+          "label": "Currently Looking For",
+          "type": "multi-select",
+          "options": [
+            "New Mentees",
+            "Mentorship Programs",
+            "Speaking Opportunities",
+            "Advisory Roles",
+            "Board Positions",
+            "Networking Events",
+            "Other"
+          ],
+          "fullWidth": true,
+          "hint": "What are you currently looking for?"
+        }
+      ]
+    }
+  ]
+}

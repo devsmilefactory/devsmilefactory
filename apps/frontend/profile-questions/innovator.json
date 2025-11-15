@@ -1,0 +1,640 @@
+{
+  "profileType": "innovator",
+  "displayName": "Innovator",
+  "description": "Entrepreneurs and startups with innovative ideas",
+  "sections": [
+    {
+      "title": "Executive Summary",
+      "icon": "person",
+      "description": "Share a brief introduction about your innovation",
+      "questions": [
+        {
+          "id": "bio",
+          "name": "bio",
+          "label": "Executive Summary",
+          "type": "textarea",
+          "required": true,
+          "fullWidth": true,
+          "hint": "Tell us briefly about your innovation (max 500 characters)"
+        }
+      ]
+    },
+    {
+      "title": "Innovation Details",
+      "icon": "lightbulb",
+      "description": "Tell us about your innovation",
+      "questions": [
+        {
+          "id": "innovation_area",
+          "name": "innovation_area",
+          "label": "Innovation Area",
+          "type": "select",
+          "required": true,
+          "options": [
+            "Agriculture & Food Tech",
+            "Clean Energy & Sustainability",
+            "Education Technology",
+            "Financial Technology",
+            "Healthcare & Biotech",
+            "Information Technology",
+            "Manufacturing & Industrial",
+            "Media & Entertainment",
+            "Retail & E-commerce",
+            "Smart Cities & Infrastructure",
+            "Social Impact",
+            "Transportation & Mobility",
+            "Other"
+          ],
+          "hint": "Select the primary area of your innovation"
+        },
+        {
+          "id": "innovation_stage",
+          "name": "innovation_stage",
+          "label": "Innovation Stage",
+          "type": "select",
+          "required": true,
+          "options": [
+            "Idea/Concept",
+            "Research & Development",
+            "Prototype/MVP",
+            "Validation/Testing",
+            "Early Traction",
+            "Scaling",
+            "Established"
+          ],
+          "hint": "What stage is your innovation currently at?"
+        },
+        {
+          "id": "innovation_description",
+          "name": "innovation_description",
+          "label": "Innovation Description",
+          "type": "textarea",
+          "required": true,
+          "fullWidth": true,
+          "hint": "Briefly describe your innovation"
+        },
+        {
+          "id": "problem_statement",
+          "name": "problem_statement",
+          "label": "Problem Statement",
+          "type": "textarea",
+          "required": true,
+          "fullWidth": true,
+          "hint": "What problem does your innovation solve?"
+        },
+        {
+          "id": "solution_description",
+          "name": "solution_description",
+          "label": "Solution Description",
+          "type": "textarea",
+          "required": true,
+          "fullWidth": true,
+          "hint": "How does your innovation solve this problem?"
+        }
+      ]
+    },
+    {
+      "title": "Market & Competition",
+      "icon": "trending_up",
+      "description": "Tell us about your market and competition",
+      "questions": [
+        {
+          "id": "target_market",
+          "name": "target_market",
+          "label": "Target Market",
+          "type": "textarea",
+          "required": true,
+          "fullWidth": true,
+          "hint": "Describe your target market and customer segments"
+        },
+        {
+          "id": "market_size",
+          "name": "market_size",
+          "label": "Market Size",
+          "type": "select",
+          "options": [
+            "Less than $1M",
+            "$1M - $10M",
+            "$10M - $50M",
+            "$50M - $100M",
+            "$100M - $500M",
+            "$500M - $1B",
+            "More than $1B"
+          ],
+          "hint": "What is the estimated size of your target market?"
+        },
+        {
+          "id": "competitors",
+          "name": "competitors",
+          "label": "Competitors",
+          "type": "textarea",
+          "fullWidth": true,
+          "hint": "Who are your main competitors?"
+        },
+        {
+          "id": "competitive_advantage",
+          "name": "competitive_advantage",
+          "label": "Competitive Advantage",
+          "type": "textarea",
+          "fullWidth": true,
+          "hint": "What is your competitive advantage?"
+        }
+      ]
+    },
+    {
+      "title": "Business Model",
+      "icon": "monetization_on",
+      "description": "Tell us about your business model",
+      "questions": [
+        {
+          "id": "revenue_model",
+          "name": "revenue_model",
+          "label": "Revenue Model",
+          "type": "select",
+          "options": [
+            "Subscription",
+            "Freemium",
+            "Transaction Fees",
+            "Advertising",
+            "Licensing",
+            "Direct Sales",
+            "Marketplace/Commission",
+            "Data Monetization",
+            "Hardware Sales",
+            "Service Fees",
+            "Other"
+          ],
+          "hint": "How do you generate revenue?"
+        },
+        {
+          "id": "current_revenue",
+          "name": "current_revenue",
+          "label": "Current Revenue",
+          "type": "select",
+          "options": [
+            "Pre-revenue",
+            "$1 - $10,000",
+            "$10,001 - $50,000",
+            "$50,001 - $100,000",
+            "$100,001 - $500,000",
+            "$500,001 - $1M",
+            "$1M - $5M",
+            "$5M+"
+          ],
+          "hint": "What is your current annual revenue?"
+        },
+        {
+          "id": "business_model_description",
+          "name": "business_model_description",
+          "label": "Business Model Description",
+          "type": "textarea",
+          "fullWidth": true,
+          "hint": "Describe your business model in detail"
+        }
+      ]
+    },
+    {
+      "title": "Team",
+      "icon": "people",
+      "description": "Tell us about your team",
+      "questions": [
+        {
+          "id": "team_size",
+          "name": "team_size",
+          "label": "Team Size",
+          "type": "number",
+          "hint": "How many people are on your team?"
+        },
+        {
+          "id": "team_expertise",
+          "name": "team_expertise",
+          "label": "Team Expertise",
+          "type": "multi-select",
+          "options": [
+            "Technical/Engineering",
+            "Product Development",
+            "Sales",
+            "Marketing",
+            "Finance",
+            "Operations",
+            "Legal",
+            "Industry Expertise",
+            "Research",
+            "Design",
+            "Other"
+          ],
+          "fullWidth": true,
+          "hint": "What expertise does your team have?"
+        },
+        {
+          "id": "looking_for_team_members",
+          "name": "looking_for_team_members",
+          "label": "Looking for Team Members",
+          "type": "boolean",
+          "hint": "Are you looking to expand your team?"
+        },
+        {
+          "id": "team_needs",
+          "name": "team_needs",
+          "label": "Team Needs",
+          "type": "multi-select",
+          "options": [
+            "Technical/Engineering",
+            "Product Development",
+            "Sales",
+            "Marketing",
+            "Finance",
+            "Operations",
+            "Legal",
+            "Industry Expertise",
+            "Research",
+            "Design",
+            "Other"
+          ],
+          "fullWidth": true,
+          "condition": {
+            "field": "looking_for_team_members",
+            "value": true
+          },
+          "hint": "What expertise are you looking for?"
+        }
+      ]
+    },
+    {
+      "title": "Funding",
+      "icon": "attach_money",
+      "description": "Tell us about your funding status and needs",
+      "questions": [
+        {
+          "id": "funding_stage",
+          "name": "funding_stage",
+          "label": "Funding Stage",
+          "type": "select",
+          "options": [
+            "Bootstrapped",
+            "Pre-seed",
+            "Seed",
+            "Series A",
+            "Series B",
+            "Series C+",
+            "Grant Funded",
+            "Revenue Financed",
+            "Other"
+          ],
+          "hint": "What is your current funding stage?"
+        },
+        {
+          "id": "total_funding_raised",
+          "name": "total_funding_raised",
+          "label": "Total Funding Raised",
+          "type": "select",
+          "options": [
+            "No funding raised",
+            "Less than $10K",
+            "$10K - $50K",
+            "$50K - $100K",
+            "$100K - $500K",
+            "$500K - $1M",
+            "$1M - $5M",
+            "$5M - $10M",
+            "$10M+"
+          ],
+          "hint": "How much funding have you raised to date?"
+        },
+        {
+          "id": "seeking_funding",
+          "name": "seeking_funding",
+          "label": "Seeking Funding",
+          "type": "boolean",
+          "hint": "Are you currently seeking funding?"
+        },
+        {
+          "id": "funding_amount_sought",
+          "name": "funding_amount_sought",
+          "label": "Funding Amount Sought",
+          "type": "select",
+          "options": [
+            "Less than $10K",
+            "$10K - $50K",
+            "$50K - $100K",
+            "$100K - $500K",
+            "$500K - $1M",
+            "$1M - $5M",
+            "$5M - $10M",
+            "$10M+"
+          ],
+          "condition": {
+            "field": "seeking_funding",
+            "value": true
+          },
+          "hint": "How much funding are you seeking?"
+        },
+        {
+          "id": "funding_use",
+          "name": "funding_use",
+          "label": "Use of Funds",
+          "type": "textarea",
+          "fullWidth": true,
+          "condition": {
+            "field": "seeking_funding",
+            "value": true
+          },
+          "hint": "How will you use the funding?"
+        }
+      ]
+    },
+    {
+      "title": "Intellectual Property",
+      "icon": "gavel",
+      "description": "Tell us about your intellectual property",
+      "questions": [
+        {
+          "id": "has_ip",
+          "name": "has_ip",
+          "label": "Do you have intellectual property?",
+          "type": "toggle",
+          "hint": "Patents, trademarks, copyrights, trade secrets, etc."
+        },
+        {
+          "id": "ip_description",
+          "name": "ip_description",
+          "label": "IP Description",
+          "type": "textarea",
+          "fullWidth": true,
+          "condition": {
+            "field": "has_ip",
+            "value": true
+          },
+          "hint": "Describe your intellectual property"
+        },
+        {
+          "id": "ip_status",
+          "name": "ip_status",
+          "label": "IP Status",
+          "type": "select",
+          "options": [
+            "Concept/Unprotected",
+            "Trade Secret",
+            "Copyright",
+            "Trademark - Applied",
+            "Trademark - Registered",
+            "Patent - Provisional",
+            "Patent - Applied",
+            "Patent - Granted",
+            "Other"
+          ],
+          "condition": {
+            "field": "has_ip",
+            "value": true
+          },
+          "hint": "What is the status of your intellectual property?"
+        }
+      ]
+    },
+    {
+      "title": "Social Media & Online Presence",
+      "icon": "public",
+      "description": "Share your online presence and social media profiles",
+      "questions": [
+        {
+          "id": "website",
+          "name": "website",
+          "label": "Website",
+          "type": "text",
+          "fullWidth": true,
+          "hint": "Your innovation or company website URL"
+        },
+        {
+          "id": "linkedin",
+          "name": "linkedin",
+          "label": "LinkedIn",
+          "type": "text",
+          "hint": "Your LinkedIn profile or company page URL"
+        },
+        {
+          "id": "twitter",
+          "name": "twitter",
+          "label": "Twitter/X",
+          "type": "text",
+          "hint": "Your Twitter/X profile URL"
+        },
+        {
+          "id": "facebook",
+          "name": "facebook",
+          "label": "Facebook",
+          "type": "text",
+          "hint": "Your Facebook profile or page URL"
+        },
+        {
+          "id": "instagram",
+          "name": "instagram",
+          "label": "Instagram",
+          "type": "text",
+          "hint": "Your Instagram profile URL"
+        }
+      ]
+    },
+    {
+      "title": "Business Contact Information",
+      "icon": "business",
+      "description": "Share your business contact information",
+      "questions": [
+        {
+          "id": "contact_email",
+          "name": "contact_email",
+          "label": "Business Email",
+          "type": "text",
+          "required": true,
+          "hint": "Your business email for contacts"
+        },
+        {
+          "id": "contact_phone",
+          "name": "contact_phone",
+          "label": "Business Phone",
+          "type": "text",
+          "hint": "Your business phone number with country code"
+        },
+        {
+          "id": "whatsapp",
+          "name": "whatsapp",
+          "label": "Business WhatsApp",
+          "type": "text",
+          "hint": "Your business WhatsApp number"
+        },
+        {
+          "id": "preferred_contact_method",
+          "name": "preferred_contact_method",
+          "label": "Preferred Business Contact Method",
+          "type": "select",
+          "options": [
+            "Email",
+            "Phone",
+            "WhatsApp",
+            "LinkedIn",
+            "Other"
+          ],
+          "hint": "How would you prefer to be contacted for business matters?"
+        }
+      ]
+    },
+    {
+      "title": "Location",
+      "icon": "location_on",
+      "description": "Share your location information",
+      "questions": [
+        {
+          "id": "city",
+          "name": "city",
+          "label": "City",
+          "type": "text",
+          "required": true,
+          "hint": "City where you are located"
+        },
+        {
+          "id": "country",
+          "name": "country",
+          "label": "Country",
+          "type": "select",
+          "required": true,
+          "options": [
+            "Zimbabwe",
+            "South Africa",
+            "Botswana",
+            "Zambia",
+            "Mozambique",
+            "Namibia",
+            "Kenya",
+            "Nigeria",
+            "Ghana",
+            "Rwanda",
+            "Uganda",
+            "Tanzania",
+            "Ethiopia",
+            "United States",
+            "United Kingdom",
+            "Other"
+          ],
+          "hint": "Country where you are located"
+        },
+        {
+          "id": "willing_to_relocate",
+          "name": "willing_to_relocate",
+          "label": "Operate in Other Markets",
+          "type": "boolean",
+          "hint": "Are you willing to operate in markets outside your current location?"
+        },
+        {
+          "id": "preferred_locations",
+          "name": "preferred_locations",
+          "label": "Other Markets of Interest",
+          "type": "multi-select",
+          "options": [
+            "Zimbabwe - Major Cities",
+            "Zimbabwe - Rural Areas",
+            "Southern Africa",
+            "East Africa",
+            "West Africa",
+            "North Africa",
+            "Central Africa",
+            "Pan-African",
+            "Europe",
+            "North America",
+            "Asia",
+            "Global"
+          ],
+          "fullWidth": true,
+          "condition": {
+            "field": "willing_to_relocate",
+            "value": true
+          },
+          "hint": "If willing to operate in other markets, which other markets would you be interested in"
+        }
+      ]
+    },
+    {
+      "title": "Goals & Interests",
+      "icon": "flag",
+      "description": "Share your goals and interests for better matchmaking",
+      "questions": [
+        {
+          "id": "short_term_goals",
+          "name": "short_term_goals",
+          "label": "Short-term Goals",
+          "type": "multi-select",
+          "options": [
+            "Secure Funding",
+            "Develop MVP",
+            "Market Validation",
+            "First Customers",
+            "Team Building",
+            "Product Improvement",
+            "Marketing & Branding",
+            "Partnerships",
+            "Mentorship",
+            "Other"
+          ],
+          "fullWidth": true,
+          "hint": "What are your short-term goals (next 12 months)?"
+        },
+        {
+          "id": "long_term_goals",
+          "name": "long_term_goals",
+          "label": "Long-term Goals",
+          "type": "multi-select",
+          "options": [
+            "Scale Operations",
+            "Enter New Markets",
+            "Secure Series A/B Funding",
+            "Acquisition",
+            "IPO",
+            "Sustainable Profitability",
+            "Social Impact",
+            "Industry Leadership",
+            "Other"
+          ],
+          "fullWidth": true,
+          "hint": "What are your long-term goals (beyond 12 months)?"
+        },
+        {
+          "id": "challenges",
+          "name": "challenges",
+          "label": "Current Challenges",
+          "type": "multi-select",
+          "options": [
+            "Funding",
+            "Product Development",
+            "Market Access",
+            "Team Building",
+            "Regulatory Compliance",
+            "Competition",
+            "Technology",
+            "Marketing & Sales",
+            "Operations",
+            "Other"
+          ],
+          "fullWidth": true,
+          "hint": "What are your biggest challenges right now?"
+        },
+        {
+          "id": "support_needed",
+          "name": "support_needed",
+          "label": "Support Needed",
+          "type": "multi-select",
+          "options": [
+            "Funding",
+            "Mentorship",
+            "Technical Expertise",
+            "Business Development",
+            "Marketing",
+            "Legal",
+            "Networking",
+            "Market Access",
+            "Other"
+          ],
+          "fullWidth": true,
+          "hint": "What kind of support do you need most?"
+        }
+      ]
+    }
+  ]
+}

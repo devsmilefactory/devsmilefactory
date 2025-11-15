@@ -1,0 +1,56 @@
+image: docker:19.03.1
+
+variables:
+  REGISTRY: 10.132.228.90:8085/registry
+  RELEASE_TAG: transactions-manager:2.0.0-RELEASE---- Change the tag and put correct release tags
+  SNAPSHOT_TAG: transactions-manager:0.0.1-SNAPSHOT ---- Change the tag and put correct build tags
+  DOCKER_OPTS: "--insecure-registry=$REGISTRY"
+  DOCKER_DRIVER: overlay2
+  CI_REGISTRY_PASSWORD: Your Password (P@55w0rd)
+  CI_REGISTRY_USER: adminweblogik
+
+services:
+  - docker:dind
+stages:
+  - develop
+  - deploy_test
+  - prod
+
+# Global Docker info check
+before_script:
+  - docker info
+
+# Build and push snapshot for develop branch
+build_develop:
+  stage: develop
+  script:
+    - echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" --password-stdin $REGISTRY
+    - docker build -f Dockerfile-lab -t $REGISTRY/$SNAPSHOT_TAG .
+    - docker push $REGISTRY/$SNAPSHOT_TAG
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "develop"'
+
+# Deploy to test environment from develop
+deploy_to_test:
+  stage: deploy_test
+  image: ubuntu:latest
+  script:
+    - apt-get update && apt-get install -y openssh-client
+    - mkdir -p ~/.ssh
+    - echo "$GITLAB_SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
+    - chmod 600 ~/.ssh/id_rsa
+    - ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no rootadmin@localhost 'cd /srv/docker/transaction-manager && ./start.sh'
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "develop"'
+
+# Build and push release image from master or release branch
+build_release:
+  stage: prod
+  script:
+    - echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" --password-stdin $REGISTRY
+    - docker build -f Dockerfile -t $REGISTRY/$RELEASE_TAG .
+    - docker push $REGISTRY/$RELEASE_TAG
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "master"'
+    - if: '$CI_COMMIT_BRANCH == "main"'
+    - if: '$CI_COMMIT_BRANCH == "release/2.0.0-RELEASE"' ----- Put the correct Branch

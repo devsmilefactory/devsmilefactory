@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ../../../apps/frontend
+      dockerfile: ../../../deployment/Dockerfile.frontend
+    container_name: smilefactory-frontend
+    ports:
+      - "80:80"
+    environment:
+      - VITE_API_URL=${VITE_API_URL:-http://localhost:3000}
+      - VITE_BACKEND_URL=${VITE_BACKEND_URL:-http://localhost:3000}
+    networks:
+      - smilefactory-network
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 20s
+    restart: unless-stopped
+    depends_on:
+      - backend-node
+
+  backend-node:
+    image: smilefactory-backend-node:latest
+    container_name: smilefactory-backend-node-frontend
+    networks:
+      - smilefactory-network
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+networks:
+  smilefactory-network:
+    external: true

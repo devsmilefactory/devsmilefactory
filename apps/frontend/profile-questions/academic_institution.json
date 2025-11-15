@@ -1,0 +1,538 @@
+{
+  "profileType": "academic_institution",
+  "displayName": "Academic Institution",
+  "description": "Educational institutions with innovation programs",
+  "sections": [
+    {
+      "title": "Executive Summary",
+      "icon": "person",
+      "description": "Share a brief introduction about your institution",
+      "questions": [
+        {
+          "id": "bio",
+          "name": "bio",
+          "label": "Executive Summary",
+          "type": "textarea",
+          "required": true,
+          "fullWidth": true,
+          "hint": "Tell us briefly about your institution and its focus (max 500 characters)"
+        }
+      ]
+    },
+    {
+      "title": "Institution Information",
+      "icon": "school",
+      "description": "Tell us about your institution",
+      "questions": [
+        {
+          "id": "institution_name",
+          "name": "institution_name",
+          "label": "Institution Name",
+          "type": "text",
+          "required": true,
+          "fullWidth": true,
+          "hint": "Full name of your academic institution"
+        },
+        {
+          "id": "institution_type",
+          "name": "institution_type",
+          "label": "Institution Type",
+          "type": "select",
+          "required": true,
+          "options": [
+            "University",
+            "College",
+            "Technical/Vocational School",
+            "Research Institute",
+            "Professional School",
+            "Secondary School",
+            "Primary School",
+            "Other"
+          ],
+          "hint": "Type of academic institution"
+        },
+        {
+          "id": "year_established",
+          "name": "year_established",
+          "label": "Year Established",
+          "type": "number",
+          "hint": "Year your institution was established"
+        },
+        {
+          "id": "institution_size",
+          "name": "institution_size",
+          "label": "Institution Size",
+          "type": "select",
+          "options": [
+            "Less than 100 students",
+            "100-500 students",
+            "501-1,000 students",
+            "1,001-5,000 students",
+            "5,001-10,000 students",
+            "10,001-20,000 students",
+            "More than 20,000 students"
+          ],
+          "hint": "Size of your institution by student population"
+        },
+        {
+          "id": "accreditation",
+          "name": "accreditation",
+          "label": "Accreditation",
+          "type": "textarea",
+          "fullWidth": true,
+          "hint": "List your institution's accreditations"
+        }
+      ]
+    },
+    {
+      "title": "Academic Programs",
+      "icon": "menu_book",
+      "description": "Tell us about your academic programs",
+      "questions": [
+        {
+          "id": "academic_levels",
+          "name": "academic_levels",
+          "label": "Academic Levels",
+          "type": "multi-select",
+          "options": [
+            "Certificate",
+            "Diploma",
+            "Associate Degree",
+            "Bachelor's Degree",
+            "Master's Degree",
+            "Doctorate",
+            "Professional Degree",
+            "Vocational Training",
+            "Other"
+          ],
+          "fullWidth": true,
+          "hint": "What academic levels does your institution offer?"
+        },
+        {
+          "id": "fields_of_study",
+          "name": "fields_of_study",
+          "label": "Fields of Study",
+          "type": "multi-select",
+          "options": [
+            "Arts & Humanities",
+            "Business & Management",
+            "Computer Science & IT",
+            "Education",
+            "Engineering",
+            "Health Sciences",
+            "Law",
+            "Mathematics",
+            "Natural Sciences",
+            "Social Sciences",
+            "Agriculture",
+            "Architecture",
+            "Other"
+          ],
+          "fullWidth": true,
+          "hint": "What fields of study does your institution offer?"
+        },
+        {
+          "id": "flagship_programs",
+          "name": "flagship_programs",
+          "label": "Flagship Programs",
+          "type": "textarea",
+          "fullWidth": true,
+          "hint": "Describe your institution's flagship or most notable academic programs"
+        },
+        {
+          "id": "online_programs",
+          "name": "online_programs",
+          "label": "Online Programs",
+          "type": "boolean",
+          "hint": "Does your institution offer online programs?"
+        }
+      ]
+    },
+    {
+      "title": "Research & Innovation",
+      "icon": "science",
+      "description": "Tell us about your research and innovation activities",
+      "questions": [
+        {
+          "id": "research_areas",
+          "name": "research_areas",
+          "label": "Research Areas",
+          "type": "multi-select",
+          "options": [
+            "Computer Science",
+            "Engineering",
+            "Medicine",
+            "Agriculture",
+            "Environmental Science",
+            "Economics",
+            "Business",
+            "Social Sciences",
+            "Humanities",
+            "Natural Sciences",
+            "Mathematics",
+            "Other"
+          ],
+          "fullWidth": true,
+          "hint": "What are your institution's primary research areas?"
+        },
+        {
+          "id": "research_centers",
+          "name": "research_centers",
+          "label": "Research Centers/Labs",
+          "type": "textarea",
+          "fullWidth": true,
+          "hint": "List your institution's research centers or laboratories"
+        },
+        {
+          "id": "innovation_initiatives",
+          "name": "innovation_initiatives",
+          "label": "Innovation Initiatives",
+          "type": "textarea",
+          "fullWidth": true,
+          "hint": "Describe your institution's innovation initiatives or programs"
+        },
+        {
+          "id": "research_funding",
+          "name": "research_funding",
+          "label": "Research Funding",
+          "type": "select",
+          "options": [
+            "Less than $100K annually",
+            "$100K - $500K annually",
+            "$500K - $1M annually",
+            "$1M - $5M annually",
+            "$5M - $10M annually",
+            "$10M - $50M annually",
+            "More than $50M annually",
+            "Prefer not to say"
+          ],
+          "hint": "What is your institution's approximate annual research funding?"
+        },
+        {
+          "id": "research_publications",
+          "name": "research_publications",
+          "label": "Research Publications",
+          "type": "number",
+          "hint": "Approximate number of research publications annually"
+        }
+      ]
+    },
+    {
+      "title": "Industry Partnerships",
+      "icon": "handshake",
+      "description": "Tell us about your industry partnerships",
+      "questions": [
+        {
+          "id": "industry_partnerships",
+          "name": "industry_partnerships",
+          "label": "Industry Partnerships",
+          "type": "textarea",
+          "fullWidth": true,
+          "hint": "Describe your institution's key industry partnerships"
+        },
+        {
+          "id": "partnership_types",
+          "name": "partnership_types",
+          "label": "Partnership Types",
+          "type": "multi-select",
+          "options": [
+            "Research Collaboration",
+            "Internship Programs",
+            "Curriculum Development",
+            "Technology Transfer",
+            "Sponsored Research",
+            "Executive Education",
+            "Consulting Services",
+            "Facility Sharing",
+            "Other"
+          ],
+          "fullWidth": true,
+          "hint": "What types of industry partnerships does your institution engage in?"
+        },
+        {
+          "id": "seeking_partnerships",
+          "name": "seeking_partnerships",
+          "label": "Seeking Partnerships",
+          "type": "boolean",
+          "hint": "Is your institution actively seeking new industry partnerships?"
+        },
+        {
+          "id": "partnership_interests",
+          "name": "partnership_interests",
+          "label": "Partnership Interests",
+          "type": "multi-select",
+          "options": [
+            "Research Collaboration",
+            "Internship Programs",
+            "Curriculum Development",
+            "Technology Transfer",
+            "Sponsored Research",
+            "Executive Education",
+            "Consulting Services",
+            "Facility Sharing",
+            "Other"
+          ],
+          "fullWidth": true,
+          "condition": {
+            "field": "seeking_partnerships",
+            "value": true
+          },
+          "hint": "What types of partnerships is your institution seeking?"
+        }
+      ]
+    },
+    {
+      "title": "Entrepreneurship & Incubation",
+      "icon": "lightbulb",
+      "description": "Tell us about your entrepreneurship and incubation programs",
+      "questions": [
+        {
+          "id": "entrepreneurship_programs",
+          "name": "entrepreneurship_programs",
+          "label": "Entrepreneurship Programs",
+          "type": "boolean",
+          "hint": "Does your institution offer entrepreneurship programs?"
+        },
+        {
+          "id": "entrepreneurship_description",
+          "name": "entrepreneurship_description",
+          "label": "Program Description",
+          "type": "textarea",
+          "fullWidth": true,
+          "condition": {
+            "field": "entrepreneurship_programs",
+            "value": true
+          },
+          "hint": "Describe your institution's entrepreneurship programs"
+        },
+        {
+          "id": "incubator",
+          "name": "incubator",
+          "label": "Incubator/Accelerator",
+          "type": "boolean",
+          "hint": "Does your institution have an incubator or accelerator?"
+        },
+        {
+          "id": "incubator_description",
+          "name": "incubator_description",
+          "label": "Incubator Description",
+          "type": "textarea",
+          "fullWidth": true,
+          "condition": {
+            "field": "incubator",
+            "value": true
+          },
+          "hint": "Describe your institution's incubator or accelerator"
+        },
+        {
+          "id": "startup_success_stories",
+          "name": "startup_success_stories",
+          "label": "Startup Success Stories",
+          "type": "textarea",
+          "fullWidth": true,
+          "hint": "Share success stories of startups from your institution"
+        }
+      ]
+    },
+    {
+      "title": "Social Media & Online Presence",
+      "icon": "public",
+      "description": "Share your online presence and social media profiles",
+      "questions": [
+        {
+          "id": "website",
+          "name": "website",
+          "label": "Website",
+          "type": "text",
+          "fullWidth": true,
+          "hint": "Your institution's website URL"
+        },
+        {
+          "id": "linkedin",
+          "name": "linkedin",
+          "label": "LinkedIn",
+          "type": "text",
+          "hint": "Your institution's LinkedIn page URL"
+        },
+        {
+          "id": "twitter",
+          "name": "twitter",
+          "label": "Twitter/X",
+          "type": "text",
+          "hint": "Your institution's Twitter/X profile URL"
+        },
+        {
+          "id": "facebook",
+          "name": "facebook",
+          "label": "Facebook",
+          "type": "text",
+          "hint": "Your institution's Facebook page URL"
+        },
+        {
+          "id": "instagram",
+          "name": "instagram",
+          "label": "Instagram",
+          "type": "text",
+          "hint": "Your institution's Instagram profile URL"
+        },
+        {
+          "id": "youtube",
+          "name": "youtube",
+          "label": "YouTube",
+          "type": "text",
+          "hint": "Your institution's YouTube channel URL"
+        }
+      ]
+    },
+    {
+      "title": "Business Contact Information",
+      "icon": "business",
+      "description": "Share your institution's contact information",
+      "questions": [
+        {
+          "id": "contact_email",
+          "name": "contact_email",
+          "label": "Contact Email",
+          "type": "text",
+          "required": true,
+          "hint": "Your institution's contact email"
+        },
+        {
+          "id": "contact_phone",
+          "name": "contact_phone",
+          "label": "Contact Phone",
+          "type": "text",
+          "hint": "Your institution's phone number with country code"
+        },
+        {
+          "id": "contact_person",
+          "name": "contact_person",
+          "label": "Contact Person",
+          "type": "text",
+          "hint": "Name of the primary contact person"
+        },
+        {
+          "id": "contact_role",
+          "name": "contact_role",
+          "label": "Contact Role",
+          "type": "text",
+          "hint": "Role of the primary contact person"
+        }
+      ]
+    },
+    {
+      "title": "Location",
+      "icon": "location_on",
+      "description": "Share your institution's location information",
+      "questions": [
+        {
+          "id": "address",
+          "name": "address",
+          "label": "Address",
+          "type": "text",
+          "fullWidth": true,
+          "hint": "Your institution's physical address"
+        },
+        {
+          "id": "city",
+          "name": "city",
+          "label": "City",
+          "type": "text",
+          "required": true,
+          "hint": "City where your institution is located"
+        },
+        {
+          "id": "country",
+          "name": "country",
+          "label": "Country",
+          "type": "select",
+          "required": true,
+          "options": [
+            "Zimbabwe",
+            "South Africa",
+            "Botswana",
+            "Zambia",
+            "Mozambique",
+            "Namibia",
+            "Kenya",
+            "Nigeria",
+            "Ghana",
+            "Rwanda",
+            "Uganda",
+            "Tanzania",
+            "Ethiopia",
+            "United States",
+            "United Kingdom",
+            "Other"
+          ],
+          "hint": "Country where your institution is located"
+        },
+        {
+          "id": "multiple_campuses",
+          "name": "multiple_campuses",
+          "label": "Multiple Campuses",
+          "type": "boolean",
+          "hint": "Does your institution have multiple campuses?"
+        },
+        {
+          "id": "campus_locations",
+          "name": "campus_locations",
+          "label": "Campus Locations",
+          "type": "textarea",
+          "fullWidth": true,
+          "condition": {
+            "field": "multiple_campuses",
+            "value": true
+          },
+          "hint": "List the locations of your institution's campuses"
+        }
+      ]
+    },
+    {
+      "title": "Goals & Interests",
+      "icon": "flag",
+      "description": "Share your institution's goals and interests for better matchmaking",
+      "questions": [
+        {
+          "id": "institutional_goals",
+          "name": "institutional_goals",
+          "label": "Institutional Goals",
+          "type": "multi-select",
+          "options": [
+            "Enhance Research Capabilities",
+            "Increase Industry Partnerships",
+            "Expand Academic Programs",
+            "Improve Student Outcomes",
+            "Boost Innovation Ecosystem",
+            "Increase Commercialization",
+            "Enhance Global Presence",
+            "Improve Community Engagement",
+            "Secure Additional Funding",
+            "Other"
+          ],
+          "fullWidth": true,
+          "hint": "What are your institution's primary goals?"
+        },
+        {
+          "id": "looking_for",
+          "name": "looking_for",
+          "label": "Currently Looking For",
+          "type": "multi-select",
+          "options": [
+            "Research Partners",
+            "Industry Collaborations",
+            "Funding Opportunities",
+            "Student Internship Placements",
+            "Technology Transfer Opportunities",
+            "Community Engagement Projects",
+            "Academic Partnerships",
+            "Innovation Ecosystem Connections",
+            "Other"
+          ],
+          "fullWidth": true,
+          "hint": "What is your institution currently looking for?"
+        }
+      ]
+    }
+  ]
+}

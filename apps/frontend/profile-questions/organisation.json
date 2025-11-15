@@ -1,0 +1,533 @@
+{
+  "profileType": "organisation",
+  "displayName": "Organisation",
+  "description": "Companies, NGOs, and other organizations supporting innovation",
+  "sections": [
+    {
+      "title": "Executive Summary",
+      "icon": "person",
+      "description": "Share a brief introduction about your organisation",
+      "questions": [
+        {
+          "id": "bio",
+          "name": "bio",
+          "label": "Executive Summary",
+          "type": "textarea",
+          "required": true,
+          "fullWidth": true,
+          "hint": "Tell us briefly about your organisation and its mission (max 500 characters)"
+        }
+      ]
+    },
+    {
+      "title": "Organisation Information",
+      "icon": "business",
+      "description": "Tell us about your organisation",
+      "questions": [
+        {
+          "id": "organisation_name",
+          "name": "organisation_name",
+          "label": "Organisation Name",
+          "type": "text",
+          "required": true,
+          "fullWidth": true,
+          "hint": "Full name of your organisation"
+        },
+        {
+          "id": "organisation_type",
+          "name": "organisation_type",
+          "label": "Organisation Type",
+          "type": "select",
+          "required": true,
+          "options": [
+            "Corporation",
+            "Small/Medium Business",
+            "Startup",
+            "Nonprofit/NGO",
+            "Government Agency",
+            "Industry Association",
+            "Cooperative",
+            "Social Enterprise",
+            "Foundation",
+            "Other"
+          ],
+          "hint": "Type of organisation"
+        },
+        {
+          "id": "year_established",
+          "name": "year_established",
+          "label": "Year Established",
+          "type": "number",
+          "hint": "Year your organisation was established"
+        },
+        {
+          "id": "organisation_size",
+          "name": "organisation_size",
+          "label": "Organisation Size",
+          "type": "select",
+          "options": [
+            "1-10 employees",
+            "11-50 employees",
+            "51-200 employees",
+            "201-500 employees",
+            "501-1,000 employees",
+            "1,001-5,000 employees",
+            "5,001-10,000 employees",
+            "More than 10,000 employees"
+          ],
+          "hint": "Size of your organisation by employee count"
+        },
+        {
+          "id": "industry",
+          "name": "industry",
+          "label": "Industry",
+          "type": "select",
+          "options": [
+            "Technology & Software",
+            "Financial Services",
+            "Healthcare & Life Sciences",
+            "Manufacturing & Industrial",
+            "Retail & Consumer Goods",
+            "Energy & Utilities",
+            "Telecommunications",
+            "Media & Entertainment",
+            "Education",
+            "Agriculture",
+            "Transportation & Logistics",
+            "Real Estate & Construction",
+            "Professional Services",
+            "Nonprofit & Social Enterprise",
+            "Other"
+          ],
+          "hint": "Primary industry of your organisation"
+        }
+      ]
+    },
+    {
+      "title": "Products & Services",
+      "icon": "inventory_2",
+      "description": "Tell us about your products and services",
+      "questions": [
+        {
+          "id": "products_services",
+          "name": "products_services",
+          "label": "Products & Services",
+          "type": "textarea",
+          "required": true,
+          "fullWidth": true,
+          "hint": "Describe your organisation's main products and/or services"
+        },
+        {
+          "id": "target_market",
+          "name": "target_market",
+          "label": "Target Market",
+          "type": "textarea",
+          "fullWidth": true,
+          "hint": "Describe your target market and customer segments"
+        },
+        {
+          "id": "unique_value_proposition",
+          "name": "unique_value_proposition",
+          "label": "Unique Value Proposition",
+          "type": "textarea",
+          "fullWidth": true,
+          "hint": "What makes your products or services unique?"
+        },
+        {
+          "id": "stage",
+          "name": "stage",
+          "label": "Organisation Stage",
+          "type": "select",
+          "options": [
+            "Idea/Concept",
+            "Startup/Early Stage",
+            "Growth Stage",
+            "Established",
+            "Mature",
+            "Expanding",
+            "Restructuring",
+            "Other"
+          ],
+          "hint": "Current stage of your organisation"
+        }
+      ]
+    },
+    {
+      "title": "Innovation & R&D",
+      "icon": "lightbulb",
+      "description": "Tell us about your innovation and R&D activities",
+      "questions": [
+        {
+          "id": "innovation_focus",
+          "name": "innovation_focus",
+          "label": "Innovation Focus",
+          "type": "multi-select",
+          "options": [
+            "Product Innovation",
+            "Service Innovation",
+            "Process Innovation",
+            "Business Model Innovation",
+            "Social Innovation",
+            "Technological Innovation",
+            "Sustainable Innovation",
+            "Disruptive Innovation",
+            "Incremental Innovation",
+            "Other"
+          ],
+          "fullWidth": true,
+          "hint": "What is your organisation's innovation focus?"
+        },
+        {
+          "id": "rd_activities",
+          "name": "rd_activities",
+          "label": "R&D Activities",
+          "type": "textarea",
+          "fullWidth": true,
+          "hint": "Describe your organisation's R&D activities"
+        },
+        {
+          "id": "innovation_achievements",
+          "name": "innovation_achievements",
+          "label": "Innovation Achievements",
+          "type": "textarea",
+          "fullWidth": true,
+          "hint": "Describe your organisation's key innovation achievements"
+        },
+        {
+          "id": "intellectual_property",
+          "name": "intellectual_property",
+          "label": "Intellectual Property",
+          "type": "textarea",
+          "fullWidth": true,
+          "hint": "Describe your organisation's intellectual property (patents, trademarks, etc.)"
+        }
+      ]
+    },
+    {
+      "title": "Partnerships & Collaborations",
+      "icon": "handshake",
+      "description": "Tell us about your partnerships and collaborations",
+      "questions": [
+        {
+          "id": "current_partnerships",
+          "name": "current_partnerships",
+          "label": "Current Partnerships",
+          "type": "textarea",
+          "fullWidth": true,
+          "hint": "Describe your organisation's key partnerships and collaborations"
+        },
+        {
+          "id": "partnership_types",
+          "name": "partnership_types",
+          "label": "Partnership Types",
+          "type": "multi-select",
+          "options": [
+            "Strategic Alliances",
+            "Joint Ventures",
+            "Research Collaborations",
+            "Supply Chain Partnerships",
+            "Distribution Partnerships",
+            "Technology Partnerships",
+            "Marketing Partnerships",
+            "Academic Partnerships",
+            "Community Partnerships",
+            "Other"
+          ],
+          "fullWidth": true,
+          "hint": "What types of partnerships does your organisation engage in?"
+        },
+        {
+          "id": "seeking_partnerships",
+          "name": "seeking_partnerships",
+          "label": "Seeking Partnerships",
+          "type": "boolean",
+          "hint": "Is your organisation actively seeking new partnerships?"
+        },
+        {
+          "id": "partnership_interests",
+          "name": "partnership_interests",
+          "label": "Partnership Interests",
+          "type": "multi-select",
+          "options": [
+            "Strategic Alliances",
+            "Joint Ventures",
+            "Research Collaborations",
+            "Supply Chain Partnerships",
+            "Distribution Partnerships",
+            "Technology Partnerships",
+            "Marketing Partnerships",
+            "Academic Partnerships",
+            "Community Partnerships",
+            "Other"
+          ],
+          "fullWidth": true,
+          "condition": {
+            "field": "seeking_partnerships",
+            "value": true
+          },
+          "hint": "What types of partnerships is your organisation seeking?"
+        }
+      ]
+    },
+    {
+      "title": "Community & Impact",
+      "icon": "public",
+      "description": "Tell us about your community engagement and impact",
+      "questions": [
+        {
+          "id": "community_engagement",
+          "name": "community_engagement",
+          "label": "Community Engagement",
+          "type": "textarea",
+          "fullWidth": true,
+          "hint": "Describe your organisation's community engagement activities"
+        },
+        {
+          "id": "social_impact",
+          "name": "social_impact",
+          "label": "Social Impact",
+          "type": "textarea",
+          "fullWidth": true,
+          "hint": "Describe your organisation's social impact"
+        },
+        {
+          "id": "sustainability_initiatives",
+          "name": "sustainability_initiatives",
+          "label": "Sustainability Initiatives",
+          "type": "textarea",
+          "fullWidth": true,
+          "hint": "Describe your organisation's sustainability initiatives"
+        },
+        {
+          "id": "sdg_alignment",
+          "name": "sdg_alignment",
+          "label": "SDG Alignment",
+          "type": "multi-select",
+          "options": [
+            "No Poverty",
+            "Zero Hunger",
+            "Good Health and Well-being",
+            "Quality Education",
+            "Gender Equality",
+            "Clean Water and Sanitation",
+            "Affordable and Clean Energy",
+            "Decent Work and Economic Growth",
+            "Industry, Innovation and Infrastructure",
+            "Reduced Inequalities",
+            "Sustainable Cities and Communities",
+            "Responsible Consumption and Production",
+            "Climate Action",
+            "Life Below Water",
+            "Life on Land",
+            "Peace, Justice and Strong Institutions",
+            "Partnerships for the Goals"
+          ],
+          "fullWidth": true,
+          "hint": "Which UN Sustainable Development Goals does your organisation align with?"
+        }
+      ]
+    },
+    {
+      "title": "Social Media & Online Presence",
+      "icon": "public",
+      "description": "Share your online presence and social media profiles",
+      "questions": [
+        {
+          "id": "website",
+          "name": "website",
+          "label": "Website",
+          "type": "text",
+          "fullWidth": true,
+          "hint": "Your organisation's website URL"
+        },
+        {
+          "id": "linkedin",
+          "name": "linkedin",
+          "label": "LinkedIn",
+          "type": "text",
+          "hint": "Your organisation's LinkedIn page URL"
+        },
+        {
+          "id": "twitter",
+          "name": "twitter",
+          "label": "Twitter/X",
+          "type": "text",
+          "hint": "Your organisation's Twitter/X profile URL"
+        },
+        {
+          "id": "facebook",
+          "name": "facebook",
+          "label": "Facebook",
+          "type": "text",
+          "hint": "Your organisation's Facebook page URL"
+        },
+        {
+          "id": "instagram",
+          "name": "instagram",
+          "label": "Instagram",
+          "type": "text",
+          "hint": "Your organisation's Instagram profile URL"
+        },
+        {
+          "id": "youtube",
+          "name": "youtube",
+          "label": "YouTube",
+          "type": "text",
+          "hint": "Your organisation's YouTube channel URL"
+        }
+      ]
+    },
+    {
+      "title": "Business Contact Information",
+      "icon": "business",
+      "description": "Share your organisation's contact information",
+      "questions": [
+        {
+          "id": "contact_email",
+          "name": "contact_email",
+          "label": "Contact Email",
+          "type": "text",
+          "required": true,
+          "hint": "Your organisation's contact email"
+        },
+        {
+          "id": "contact_phone",
+          "name": "contact_phone",
+          "label": "Contact Phone",
+          "type": "text",
+          "hint": "Your organisation's phone number with country code"
+        },
+        {
+          "id": "contact_person",
+          "name": "contact_person",
+          "label": "Contact Person",
+          "type": "text",
+          "hint": "Name of the primary contact person"
+        },
+        {
+          "id": "contact_role",
+          "name": "contact_role",
+          "label": "Contact Role",
+          "type": "text",
+          "hint": "Role of the primary contact person"
+        }
+      ]
+    },
+    {
+      "title": "Location",
+      "icon": "location_on",
+      "description": "Share your organisation's location information",
+      "questions": [
+        {
+          "id": "address",
+          "name": "address",
+          "label": "Address",
+          "type": "text",
+          "fullWidth": true,
+          "hint": "Your organisation's physical address"
+        },
+        {
+          "id": "city",
+          "name": "city",
+          "label": "City",
+          "type": "text",
+          "required": true,
+          "hint": "City where your organisation is located"
+        },
+        {
+          "id": "country",
+          "name": "country",
+          "label": "Country",
+          "type": "select",
+          "required": true,
+          "options": [
+            "Zimbabwe",
+            "South Africa",
+            "Botswana",
+            "Zambia",
+            "Mozambique",
+            "Namibia",
+            "Kenya",
+            "Nigeria",
+            "Ghana",
+            "Rwanda",
+            "Uganda",
+            "Tanzania",
+            "Ethiopia",
+            "United States",
+            "United Kingdom",
+            "Other"
+          ],
+          "hint": "Country where your organisation is located"
+        },
+        {
+          "id": "multiple_locations",
+          "name": "multiple_locations",
+          "label": "Multiple Locations",
+          "type": "boolean",
+          "hint": "Does your organisation have multiple locations?"
+        },
+        {
+          "id": "location_details",
+          "name": "location_details",
+          "label": "Location Details",
+          "type": "textarea",
+          "fullWidth": true,
+          "condition": {
+            "field": "multiple_locations",
+            "value": true
+          },
+          "hint": "List the locations of your organisation's offices"
+        }
+      ]
+    },
+    {
+      "title": "Goals & Interests",
+      "icon": "flag",
+      "description": "Share your organisation's goals and interests for better matchmaking",
+      "questions": [
+        {
+          "id": "organisational_goals",
+          "name": "organisational_goals",
+          "label": "Organisational Goals",
+          "type": "multi-select",
+          "options": [
+            "Business Growth",
+            "Market Expansion",
+            "Product Development",
+            "Innovation",
+            "Sustainability",
+            "Social Impact",
+            "Operational Efficiency",
+            "Digital Transformation",
+            "Talent Acquisition",
+            "Industry Leadership",
+            "Other"
+          ],
+          "fullWidth": true,
+          "hint": "What are your organisation's primary goals?"
+        },
+        {
+          "id": "looking_for",
+          "name": "looking_for",
+          "label": "Currently Looking For",
+          "type": "multi-select",
+          "options": [
+            "Business Partners",
+            "Investment Opportunities",
+            "Innovation Partners",
+            "Technology Solutions",
+            "Market Access",
+            "Talent",
+            "Funding",
+            "Research Collaboration",
+            "Community Engagement",
+            "Other"
+          ],
+          "fullWidth": true,
+          "hint": "What is your organisation currently looking for?"
+        }
+      ]
+    }
+  ]
+}

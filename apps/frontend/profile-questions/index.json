@@ -1,0 +1,52 @@
+{
+  "profileTypes": [
+    {
+      "value": "innovator",
+      "label": "Innovator",
+      "description": "Entrepreneurs and startups with innovative ideas",
+      "icon": "lightbulb"
+    },
+    {
+      "value": "investor",
+      "label": "Business Investor",
+      "description": "Investors looking to fund innovative projects",
+      "icon": "attach_money"
+    },
+    {
+      "value": "mentor",
+      "label": "Mentor",
+      "description": "Experienced professionals offering guidance and mentorship",
+      "icon": "school"
+    },
+    {
+      "value": "professional",
+      "label": "Professional",
+      "description": "Industry professionals looking to network and collaborate",
+      "icon": "work"
+    },
+    {
+      "value": "industry_expert",
+      "label": "Industry Expert",
+      "description": "Subject matter experts with specialized knowledge",
+      "icon": "engineering"
+    },
+    {
+      "value": "academic_student",
+      "label": "Academic Student",
+      "description": "Students with academic projects and research interests",
+      "icon": "menu_book"
+    },
+    {
+      "value": "academic_institution",
+      "label": "Academic Institution",
+      "description": "Educational institutions with innovation programs",
+      "icon": "account_balance"
+    },
+    {
+      "value": "organisation",
+      "label": "Organisation",
+      "description": "Companies, NGOs, and other organizations supporting innovation",
+      "icon": "business"
+    }
+  ]
+}

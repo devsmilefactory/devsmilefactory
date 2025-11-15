@@ -1,0 +1,459 @@
+{
+  "profileType": "investor",
+  "displayName": "Investor",
+  "description": "Investors looking to fund innovative projects",
+  "sections": [
+    {
+      "title": "Executive Summary",
+      "icon": "person",
+      "description": "Share a brief introduction about your investment focus",
+      "questions": [
+        {
+          "id": "bio",
+          "name": "bio",
+          "label": "Executive Summary",
+          "type": "textarea",
+          "required": true,
+          "fullWidth": true,
+          "hint": "Tell us briefly about your investment approach and interests (max 500 characters)"
+        }
+      ]
+    },
+    {
+      "title": "Investment Preferences",
+      "icon": "attach_money",
+      "description": "Tell us about your investment preferences",
+      "questions": [
+        {
+          "id": "investment_focus",
+          "name": "investment_focus",
+          "label": "Investment Focus",
+          "type": "multi-select",
+          "required": true,
+          "options": [
+            "Agriculture & Food Tech",
+            "Clean Energy & Sustainability",
+            "Education Technology",
+            "Financial Technology",
+            "Healthcare & Biotech",
+            "Information Technology",
+            "Manufacturing & Industrial",
+            "Media & Entertainment",
+            "Retail & E-commerce",
+            "Smart Cities & Infrastructure",
+            "Social Impact",
+            "Transportation & Mobility",
+            "Other"
+          ],
+          "fullWidth": true,
+          "hint": "What areas do you focus your investments on?"
+        },
+        {
+          "id": "investment_stage",
+          "name": "investment_stage",
+          "label": "Investment Stage",
+          "type": "multi-select",
+          "required": true,
+          "options": [
+            "Pre-seed",
+            "Seed",
+            "Series A",
+            "Series B",
+            "Series C+",
+            "Growth Stage",
+            "Mature Companies",
+            "Any Stage"
+          ],
+          "fullWidth": true,
+          "hint": "What stages do you typically invest in?"
+        },
+        {
+          "id": "investment_size",
+          "name": "investment_size",
+          "label": "Investment Size",
+          "type": "multi-select",
+          "required": true,
+          "options": [
+            "Less than $10K",
+            "$10K - $50K",
+            "$50K - $100K",
+            "$100K - $500K",
+            "$500K - $1M",
+            "$1M - $5M",
+            "$5M - $10M",
+            "$10M+"
+          ],
+          "fullWidth": true,
+          "hint": "What is your typical investment size?"
+        },
+        {
+          "id": "investment_geography",
+          "name": "investment_geography",
+          "label": "Investment Geography",
+          "type": "multi-select",
+          "options": [
+            "Zimbabwe Only",
+            "Southern Africa",
+            "East Africa",
+            "West Africa",
+            "North Africa",
+            "Pan-African",
+            "Global",
+            "Other"
+          ],
+          "fullWidth": true,
+          "hint": "What geographic regions do you invest in?"
+        }
+      ]
+    },
+    {
+      "title": "Investment Criteria",
+      "icon": "rule",
+      "description": "Tell us about your investment criteria",
+      "questions": [
+        {
+          "id": "investment_criteria",
+          "name": "investment_criteria",
+          "label": "Key Investment Criteria",
+          "type": "multi-select",
+          "options": [
+            "Strong Team",
+            "Market Size",
+            "Traction",
+            "Innovative Technology",
+            "Competitive Advantage",
+            "Scalability",
+            "Revenue Potential",
+            "Exit Potential",
+            "Social Impact",
+            "Sustainability",
+            "Other"
+          ],
+          "fullWidth": true,
+          "hint": "What are your key criteria for investments?"
+        },
+        {
+          "id": "success_stories",
+          "name": "success_stories",
+          "label": "Success Stories",
+          "type": "textarea",
+          "fullWidth": true,
+          "hint": "Share some of your investment success stories"
+        },
+        {
+          "id": "portfolio",
+          "name": "portfolio",
+          "label": "Portfolio",
+          "type": "text",
+          "fullWidth": true,
+          "hint": "List some companies in your portfolio"
+        }
+      ]
+    },
+    {
+      "title": "Firm Details",
+      "icon": "business",
+      "description": "Tell us about your investment firm",
+      "questions": [
+        {
+          "id": "firm_name",
+          "name": "firm_name",
+          "label": "Firm Name",
+          "type": "text",
+          "hint": "Name of your investment firm (if applicable)"
+        },
+        {
+          "id": "firm_type",
+          "name": "firm_type",
+          "label": "Firm Type",
+          "type": "select",
+          "options": [
+            "Venture Capital",
+            "Angel Investor",
+            "Private Equity",
+            "Corporate Venture Capital",
+            "Family Office",
+            "Impact Investor",
+            "Accelerator/Incubator",
+            "Government Fund",
+            "Individual Investor",
+            "Other"
+          ],
+          "hint": "Type of investment firm"
+        },
+        {
+          "id": "firm_size",
+          "name": "firm_size",
+          "label": "Firm Size",
+          "type": "number",
+          "hint": "Number of employees at your firm"
+        },
+        {
+          "id": "firm_website",
+          "name": "firm_website",
+          "label": "Firm Website",
+          "type": "text",
+          "hint": "Website of your investment firm"
+        }
+      ]
+    },
+    {
+      "title": "Investment Process",
+      "icon": "assignment",
+      "description": "Tell us about your investment process",
+      "questions": [
+        {
+          "id": "investment_process",
+          "name": "investment_process",
+          "label": "Investment Process",
+          "type": "textarea",
+          "fullWidth": true,
+          "hint": "Describe your typical investment process"
+        },
+        {
+          "id": "decision_timeline",
+          "name": "decision_timeline",
+          "label": "Decision Timeline",
+          "type": "select",
+          "options": [
+            "Less than 1 month",
+            "1-3 months",
+            "3-6 months",
+            "6+ months",
+            "Varies"
+          ],
+          "hint": "How long does your investment decision process typically take?"
+        },
+        {
+          "id": "pitch_preferences",
+          "name": "pitch_preferences",
+          "label": "Pitch Preferences",
+          "type": "multi-select",
+          "options": [
+            "Email Introduction",
+            "Warm Introduction",
+            "Pitch Events",
+            "Online Submission",
+            "Accelerator Programs",
+            "Other"
+          ],
+          "fullWidth": true,
+          "hint": "How do you prefer to receive pitches?"
+        }
+      ]
+    },
+    {
+      "title": "Investment Performance",
+      "icon": "trending_up",
+      "description": "Tell us about your investment performance",
+      "questions": [
+        {
+          "id": "portfolio_size",
+          "name": "portfolio_size",
+          "label": "Portfolio Size",
+          "type": "select",
+          "options": [
+            "1-5 companies",
+            "6-10 companies",
+            "11-20 companies",
+            "21-50 companies",
+            "50+ companies"
+          ],
+          "hint": "How many companies are in your investment portfolio?"
+        },
+        {
+          "id": "average_return",
+          "name": "average_return",
+          "label": "Average Annual Return",
+          "type": "select",
+          "options": [
+            "Less than 5%",
+            "5-10%",
+            "10-15%",
+            "15-20%",
+            "20-30%",
+            "30%+",
+            "Prefer not to say"
+          ],
+          "hint": "What is your average annual return on investments?"
+        },
+        {
+          "id": "successful_exits",
+          "name": "successful_exits",
+          "label": "Successful Exits",
+          "type": "number",
+          "hint": "How many successful exits have you had?"
+        }
+      ]
+    },
+    {
+      "title": "Social Media & Online Presence",
+      "icon": "public",
+      "description": "Share your online presence and social media profiles",
+      "questions": [
+        {
+          "id": "website",
+          "name": "website",
+          "label": "Website",
+          "type": "text",
+          "fullWidth": true,
+          "hint": "Your investment firm or personal website URL"
+        },
+        {
+          "id": "linkedin",
+          "name": "linkedin",
+          "label": "LinkedIn",
+          "type": "text",
+          "hint": "Your LinkedIn profile URL"
+        },
+        {
+          "id": "twitter",
+          "name": "twitter",
+          "label": "Twitter/X",
+          "type": "text",
+          "hint": "Your Twitter/X profile URL"
+        },
+        {
+          "id": "facebook",
+          "name": "facebook",
+          "label": "Facebook",
+          "type": "text",
+          "hint": "Your Facebook profile or page URL"
+        },
+        {
+          "id": "instagram",
+          "name": "instagram",
+          "label": "Instagram",
+          "type": "text",
+          "hint": "Your Instagram profile URL"
+        }
+      ]
+    },
+    {
+      "title": "Business Contact Information",
+      "icon": "business",
+      "description": "Share your business contact information",
+      "questions": [
+        {
+          "id": "contact_email",
+          "name": "contact_email",
+          "label": "Business Email",
+          "type": "text",
+          "required": true,
+          "hint": "Your business email for contacts"
+        },
+        {
+          "id": "contact_phone",
+          "name": "contact_phone",
+          "label": "Business Phone",
+          "type": "text",
+          "hint": "Your business phone number with country code"
+        },
+        {
+          "id": "whatsapp",
+          "name": "whatsapp",
+          "label": "Business WhatsApp",
+          "type": "text",
+          "hint": "Your business WhatsApp number"
+        },
+        {
+          "id": "preferred_contact_method",
+          "name": "preferred_contact_method",
+          "label": "Preferred Business Contact Method",
+          "type": "select",
+          "options": [
+            "Email",
+            "Phone",
+            "WhatsApp",
+            "LinkedIn",
+            "Other"
+          ],
+          "hint": "How would you prefer to be contacted for business matters?"
+        }
+      ]
+    },
+    {
+      "title": "Location",
+      "icon": "location_on",
+      "description": "Share your location information",
+      "questions": [
+        {
+          "id": "city",
+          "name": "city",
+          "label": "City",
+          "type": "text",
+          "required": true,
+          "hint": "City where you are located"
+        },
+        {
+          "id": "country",
+          "name": "country",
+          "label": "Country",
+          "type": "select",
+          "required": true,
+          "options": [
+            "Zimbabwe",
+            "South Africa",
+            "Botswana",
+            "Zambia",
+            "Mozambique",
+            "Namibia",
+            "Kenya",
+            "Nigeria",
+            "Ghana",
+            "Rwanda",
+            "Uganda",
+            "Tanzania",
+            "Ethiopia",
+            "United States",
+            "United Kingdom",
+            "Other"
+          ],
+          "hint": "Country where you are located"
+        }
+      ]
+    },
+    {
+      "title": "Goals & Interests",
+      "icon": "flag",
+      "description": "Share your goals and interests for better matchmaking",
+      "questions": [
+        {
+          "id": "investment_goals",
+          "name": "investment_goals",
+          "label": "Investment Goals",
+          "type": "multi-select",
+          "options": [
+            "Financial Returns",
+            "Portfolio Diversification",
+            "Strategic Partnerships",
+            "Market Insights",
+            "Social Impact",
+            "Supporting Innovation",
+            "Industry Disruption",
+            "Other"
+          ],
+          "fullWidth": true,
+          "hint": "What are your primary investment goals?"
+        },
+        {
+          "id": "looking_for",
+          "name": "looking_for",
+          "label": "Currently Looking For",
+          "type": "multi-select",
+          "options": [
+            "New Investment Opportunities",
+            "Co-Investment Partners",
+            "Deal Flow Sources",
+            "Industry Experts",
+            "Due Diligence Support",
+            "Portfolio Company Support",
+            "Other"
+          ],
+          "fullWidth": true,
+          "hint": "What are you currently looking for?"
+        }
+      ]
+    }
+  ]
+}

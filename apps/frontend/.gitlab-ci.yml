@@ -1,0 +1,268 @@
+stages:
+  - lint
+  - test
+  - build
+  - docker
+  - deploy
+  - verify
+  - notify
+
+default:
+  image: node:18-alpine
+  cache:
+    key: "${CI_PROJECT_NAME}-${CI_COMMIT_REF_SLUG}"
+    paths:
+      - node_modules/
+      - backend/node_modules/
+      - backend/package-lock.json
+      - package-lock.json
+    policy: pull-push
+  before_script:
+    - npm install -g npm@latest
+
+variables:
+  NPM_CONFIG_FUND: "false"
+  NPM_CONFIG_AUDIT: "false"
+  FRONTEND_DIR: "."
+  BACKEND_DIR: "backend"
+
+workflow:
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    - if: $CI_COMMIT_BRANCH
+    - if: $CI_COMMIT_TAG
+
+lint:frontend:
+  stage: lint
+  script:
+    - cd "$FRONTEND_DIR"
+    - npm ci
+    - npm run lint
+  artifacts:
+    when: on_failure
+    paths:
+      - eslint-report.txt
+  rules:
+    - if: '$CI_COMMIT_BRANCH || $CI_PIPELINE_SOURCE == "merge_request_event"'
+
+lint:backend:
+  stage: lint
+  script:
+    - cd "$BACKEND_DIR"
+    - npm ci
+    - npm run lint
+  rules:
+    - if: '$CI_COMMIT_BRANCH || $CI_PIPELINE_SOURCE == "merge_request_event"'
+
+test:backend:
+  stage: test
+  script:
+    - cd "$BACKEND_DIR"
+    - npm ci
+    - npm run test
+  rules:
+    - if: '$CI_COMMIT_BRANCH || $CI_PIPELINE_SOURCE == "merge_request_event"'
+
+build:frontend:
+  stage: build
+  script:
+    - cd "$FRONTEND_DIR"
+    - npm ci
+    - npm run build
+  artifacts:
+    paths:
+      - dist
+    expire_in: 7 days
+  rules:
+    - if: '$CI_COMMIT_BRANCH || $CI_PIPELINE_SOURCE == "merge_request_event"'
+
+build:backend:
+  stage: build
+  script:
+    - cd "$BACKEND_DIR"
+    - npm ci
+    - npm run build
+  artifacts:
+    paths:
+      - backend/services/api-gateway/dist
+      - backend/services/auth-service/dist
+      - backend/services/user-service/dist
+    expire_in: 7 days
+  rules:
+    - if: '$CI_COMMIT_BRANCH || $CI_PIPELINE_SOURCE == "merge_request_event"'
+
+docker:build:
+  stage: docker
+  image: docker:25.0.3
+  services:
+    - docker:25.0.3-dind
+  variables:
+    DOCKER_TLS_CERTDIR: ""
+  before_script:
+    - echo "${CI_REGISTRY_PASSWORD}" | docker login -u "${CI_REGISTRY_USER}" --password-stdin "${CI_REGISTRY}"
+  script:
+    - docker build -f Dockerfile -t "${CI_REGISTRY_IMAGE}/frontend:${CI_COMMIT_SHA}" .
+    - docker build -f backend/services/api-gateway/Dockerfile -t "${CI_REGISTRY_IMAGE}/api-gateway:${CI_COMMIT_SHA}" backend/services/api-gateway
+    - docker build -f backend/services/auth-service/Dockerfile -t "${CI_REGISTRY_IMAGE}/auth-service:${CI_COMMIT_SHA}" backend/services/auth-service
+    - docker build -f backend/services/user-service/Dockerfile -t "${CI_REGISTRY_IMAGE}/user-service:${CI_COMMIT_SHA}" backend/services/user-service
+    - docker push "${CI_REGISTRY_IMAGE}/frontend:${CI_COMMIT_SHA}"
+    - docker push "${CI_REGISTRY_IMAGE}/api-gateway:${CI_COMMIT_SHA}"
+    - docker push "${CI_REGISTRY_IMAGE}/auth-service:${CI_COMMIT_SHA}"
+    - docker push "${CI_REGISTRY_IMAGE}/user-service:${CI_COMMIT_SHA}"
+    - |
+      if [ -n "${CI_COMMIT_BRANCH}" ]; then
+        docker tag "${CI_REGISTRY_IMAGE}/frontend:${CI_COMMIT_SHA}" "${CI_REGISTRY_IMAGE}/frontend:${CI_COMMIT_REF_SLUG}"
+        docker tag "${CI_REGISTRY_IMAGE}/api-gateway:${CI_COMMIT_SHA}" "${CI_REGISTRY_IMAGE}/api-gateway:${CI_COMMIT_REF_SLUG}"
+        docker tag "${CI_REGISTRY_IMAGE}/auth-service:${CI_COMMIT_SHA}" "${CI_REGISTRY_IMAGE}/auth-service:${CI_COMMIT_REF_SLUG}"
+        docker tag "${CI_REGISTRY_IMAGE}/user-service:${CI_COMMIT_SHA}" "${CI_REGISTRY_IMAGE}/user-service:${CI_COMMIT_REF_SLUG}"
+        docker push "${CI_REGISTRY_IMAGE}/frontend:${CI_COMMIT_REF_SLUG}"
+        docker push "${CI_REGISTRY_IMAGE}/api-gateway:${CI_COMMIT_REF_SLUG}"
+        docker push "${CI_REGISTRY_IMAGE}/auth-service:${CI_COMMIT_REF_SLUG}"
+        docker push "${CI_REGISTRY_IMAGE}/user-service:${CI_COMMIT_REF_SLUG}"
+      fi
+  needs:
+    - build:frontend
+    - build:backend
+  rules:
+    - if: '$CI_COMMIT_BRANCH || $CI_COMMIT_TAG'
+
+deploy:staging-backend:
+  stage: deploy
+  image: alpine:3.20
+  before_script:
+    - apk add --no-cache openssh-client bash
+  script:
+    - chmod +x deployment/scripts/deploy.sh
+    - deployment/scripts/deploy.sh staging backend
+  environment:
+    name: staging
+    url: https://${API_DOMAIN_STAGING}
+  needs:
+    - docker:build
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "develop"'
+      when: manual
+      allow_failure: false
+
+deploy:staging-frontend:
+  stage: deploy
+  image: alpine:3.20
+  before_script:
+    - apk add --no-cache openssh-client bash
+  script:
+    - chmod +x deployment/scripts/deploy.sh
+    - deployment/scripts/deploy.sh staging frontend
+  environment:
+    name: staging-frontend
+    url: https://${APP_DOMAIN_STAGING}
+  needs:
+    - docker:build
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "develop"'
+      when: manual
+      allow_failure: false
+
+deploy:production-backend:
+  stage: deploy
+  image: alpine:3.20
+  before_script:
+    - apk add --no-cache openssh-client bash
+  script:
+    - chmod +x deployment/scripts/deploy.sh
+    - deployment/scripts/deploy.sh production backend
+  environment:
+    name: production
+    url: https://${API_DOMAIN_PRODUCTION}
+  needs:
+    - docker:build
+  rules:
+    - if: '$CI_COMMIT_TAG =~ /^v\\d+\\.\\d+\\.\\d+$/'
+      when: manual
+      allow_failure: false
+
+deploy:production-frontend:
+  stage: deploy
+  image: alpine:3.20
+  before_script:
+    - apk add --no-cache openssh-client bash
+  script:
+    - chmod +x deployment/scripts/deploy.sh
+    - deployment/scripts/deploy.sh production frontend
+  environment:
+    name: production-frontend
+    url: https://${APP_DOMAIN_PRODUCTION}
+  needs:
+    - docker:build
+  rules:
+    - if: '$CI_COMMIT_TAG =~ /^v\\d+\\.\\d+\\.\\d+$/'
+      when: manual
+      allow_failure: false
+
+smoke:staging:
+  stage: verify
+  image: alpine:3.20
+  before_script:
+    - apk add --no-cache curl bash
+  script:
+    - bash deployment/scripts/smoke.sh "${SMOKE_BASE_URL_STAGING:-https://${API_DOMAIN_STAGING}}" "${SMOKE_FRONTEND_URL_STAGING:-https://${APP_DOMAIN_STAGING:-}}"
+  needs:
+    - job: deploy:staging-backend
+      optional: true
+    - job: deploy:staging-frontend
+      optional: true
+  environment:
+    name: staging
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "develop"'
+      when: manual
+      allow_failure: false
+
+smoke:production:
+  stage: verify
+  image: alpine:3.20
+  before_script:
+    - apk add --no-cache curl bash
+  script:
+    - bash deployment/scripts/smoke.sh "${SMOKE_BASE_URL_PRODUCTION:-https://${API_DOMAIN_PRODUCTION}}" "${SMOKE_FRONTEND_URL_PRODUCTION:-https://${APP_DOMAIN_PRODUCTION:-}}"
+  needs:
+    - job: deploy:production-backend
+      optional: true
+    - job: deploy:production-frontend
+      optional: true
+  environment:
+    name: production
+  rules:
+    - if: '$CI_COMMIT_TAG =~ /^v\\d+\\.\\d+\\.\\d+$/'
+      when: manual
+      allow_failure: false
+
+linear:mr_opened:
+  stage: notify
+  image: alpine:3.20
+  before_script:
+    - apk add --no-cache bash curl jq grep
+  script:
+    - bash scripts/ci/linear-update.sh review "${CI_MERGE_REQUEST_TITLE:-$CI_COMMIT_TITLE} ${CI_COMMIT_BRANCH}" "${LINEAR_TEAM_KEY:-}"
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      when: on_success
+      allow_failure: true
+
+linear:release_done:
+  stage: notify
+  image: alpine:3.20
+  before_script:
+    - apk add --no-cache bash curl jq grep git
+  script:
+    - export MESSAGE="${CI_COMMIT_TAG:-$CI_COMMIT_TITLE} ${CI_COMMIT_MESSAGE}"
+    - bash scripts/ci/linear-update.sh done "${MESSAGE}" "${LINEAR_TEAM_KEY:-}"
+  needs:
+    - job: deploy:production-backend
+      optional: true
+    - job: deploy:production-frontend
+      optional: true
+  rules:
+    - if: '$CI_COMMIT_TAG =~ /^v\\d+\\.\\d+\\.\\d+$/'
+      when: on_success
+      allow_failure: true
+
