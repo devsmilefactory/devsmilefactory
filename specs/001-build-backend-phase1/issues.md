@@ -1,4 +1,4 @@
-# GitHub Issue Drafts — Phase 1 Backend Foundation
+# GitHub Issue Drafts -- Phase 1 Backend Foundation
 
 Remote: https://github.com/devsmilefactory/devsmilefactory.git  
 Scope: Additive changes only under `apps/backend-node` and supporting config directories.
