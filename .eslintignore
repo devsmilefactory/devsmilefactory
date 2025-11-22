@@ -1,0 +1,21 @@
+node_modules/
+dist/
+build/
+coverage/
+.cache/
+.next/
+.nuxt/
+*.log
+.env
+.env.*
+**/*.generated.ts
+**/generated/**
+**/*.d.ts
+
+# IDE/editor
+.vscode/
+.idea/
+
+# Generated artifacts
+tmp/
+temp/
